@@ -194,6 +194,14 @@
     return String(s == null ? '' : s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
   }
 
+  // 参数标签：中文名与英文键相同时只显示一行，避免「宽度下限 / 宽度下限」这种重复叠字
+  function lblCell(p) {
+    const k = String(p.k || '');
+    const cn = String(p.cn || '');
+    if (!cn || cn === k) return esc(k);
+    return `${esc(cn)}<br><code>${esc(k)}</code>`;
+  }
+
   function openDetail(id, push) {
     const it = st.data.items.find((x) => x.id === id);
     if (!it) return;
@@ -203,7 +211,6 @@
     const box = $('drawerBody');
     const params = it.params || [];
     box.innerHTML = `
-      <h3 class="d-name" id="dName">${esc(it.name)}</h3>
       <div class="d-en">${esc(it.en || '')}${it.en ? ' · ' : ''}${esc(it.srcLabel)} · ${esc(it.kindLabel)}</div>
       <div class="d-meta">
         <span class="badge" style="--rc:${it.rc}">${esc(it.rarity)}</span>
@@ -213,7 +220,7 @@
       </div>
       <div class="d-sec"><h4>效果</h4><div class="d-desc">${it.descHtml || esc(it.desc) || '（无说明）'}</div></div>
       <div class="d-sec"><h4>可附在</h4><div class="d-tg">${(it.tg.length ? it.tg : ['（未标注）']).map((t) => `<span>${esc(t)}</span>`).join('')}</div></div>
-      ${params.length ? `<div class="d-sec"><h4>数值参数</h4><table class="kv">${params.map((p) => `<tr><td>${esc(p.cn || p.k)}<br><code>${esc(p.k)}</code></td><td><code>${esc(p.v)}</code></td></tr>`).join('')}</table></div>` : ''}
+      ${params.length ? `<div class="d-sec"><h4>数值参数</h4><table class="kv">${params.map((p) => `<tr><td>${lblCell(p)}</td><td><code>${esc(p.v)}</code></td></tr>`).join('')}</table></div>` : ''}
       ${it.conflicts.length || it.groups.length || it.need.length ? `<div class="d-sec"><h4>冲突与前置</h4><table class="kv">
         ${it.conflicts.length ? `<tr><td>互斥附魔</td><td>${it.conflicts.map(esc).join('、')}</td></tr>` : ''}
         ${it.groups.length ? `<tr><td>互斥分组</td><td>${it.groups.map(esc).join('、')}</td></tr>` : ''}
@@ -225,10 +232,14 @@
         <p class="note">用于 /enchant 或插件命令中指定该附魔。</p>
       </div>`;
 
-    $('drawer').hidden = false;
+    $('drawerTtl').textContent = it.name || '';
+    // 锁定背景滚动，并补上滚动条宽度，避免打开瞬间整页横向跳动
+    const sbw = window.innerWidth - document.documentElement.clientWidth;
     document.body.style.overflow = 'hidden';
-    $('drawerX').focus();
-    box.parentElement.scrollTop = 0;
+    if (sbw > 0) document.body.style.paddingRight = sbw + 'px';
+    $('drawer').hidden = false;
+    $('drawerScroll').scrollTop = 0;
+    $('drawerX').focus({ preventScroll: true });
 
     const cp = box.querySelector('.copy');
     if (cp) cp.addEventListener('click', async () => {
@@ -241,6 +252,7 @@
     st.openId = null;
     $('drawer').hidden = true;
     document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
     writeUrl(push !== false);
   }
 

@@ -74,9 +74,14 @@
 <!-- 详情面板 -->
 <div id="drawer" class="drawer" hidden>
   <div class="drawer-bd" id="drawerBd"></div>
-  <aside class="drawer-p" role="dialog" aria-modal="true" aria-labelledby="dName">
-    <button id="drawerX" class="drawer-x" aria-label="关闭">✕</button>
-    <div id="drawerBody"></div>
+  <aside class="drawer-p" role="dialog" aria-modal="true" aria-labelledby="drawerTtl">
+    <div class="drawer-hd">
+      <span class="drawer-ttl" id="drawerTtl"></span>
+      <button id="drawerX" class="drawer-x" aria-label="关闭">✕</button>
+    </div>
+    <div class="drawer-scroll" id="drawerScroll">
+      <div id="drawerBody"></div>
+    </div>
   </aside>
 </div>
 
