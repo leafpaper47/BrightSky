@@ -75,6 +75,7 @@ cd web && python -m http.server 8080
 - 原版附魔的效果由客户端/服务端原版逻辑实现，插件只接管名称、品质、适用物品与冲突。
 - NereusOpus 的 `unknown` 档实际中文是「稀世」（不是「未知品质」），已与 Aiyatsbus 的 `splendid` 合并为同一档。
 - 「皮肤（artifact）」档在两个插件里都标记为不可获得，一般不出现在正常流程中。
+- 站点允许覆盖显示名（只影响本站，不改插件本体）：目前把 NereusOpus 的 `puncture` 显示为「碎甲」，因为原版 Aiyatsbus 的 `breach` 已经叫「破甲」。改动位置见 `build_app.py` 的 `NAME_OVERRIDE`。
 
 ## 致谢
 

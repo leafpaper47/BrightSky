@@ -88,6 +88,12 @@ KIND = {
     "vanilla": "原版", "custom": "自定义", "skill": "技能", "simple": "被动", "curse": "诅咒",
 }
 SRC_LABEL = {"aiya": "Aiyatsbus", "nereus": "NereusOpus"}
+
+# 站点显示名覆盖（只改文档站，不动插件本体）
+# 原版 Aiyatsbus 的 breach 已叫「破甲」，NereusOpus 的 puncture 同名会混淆，这里改成「碎甲」
+NAME_OVERRIDE = {
+    ("nereus", "puncture"): "碎甲",
+}
 LISTEN_CN = {
     "entity-damage-other": "造成伤害时", "entity-death": "击杀生物时", "block-break": "破坏方块时",
     "block-place": "放置方块时", "player-interact": "玩家交互时", "player-fish": "钓鱼时",
@@ -226,6 +232,12 @@ def main():
         raw = json.load(f)
 
     items = [build_aiya(e) for e in raw["aiya"]] + [build_nereus(e) for e in raw["nereus"]]
+
+    # 显示名覆盖（见 NAME_OVERRIDE）
+    for it in items:
+        ov = NAME_OVERRIDE.get((it["src"], it["id"]))
+        if ov:
+            it["name"] = ov
 
     # 品质归一到「稀世」后去重
     rarity_seen = {}
