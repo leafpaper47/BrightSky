@@ -1,12 +1,9 @@
 # 依赖与构建产物
-site/node_modules/
-site/pnpm-lock.yaml.bak
-site/docs/.vuepress/.temp/
-site/docs/.vuepress/.cache/
-site/docs/.vuepress/dist/
-site/docs/.vuepress/.pnp*
+node_modules/
+.temp/
+.cache/
 
-# 本机调试日志
+# 本机调试
 dev.log
 dev.err
 *.log

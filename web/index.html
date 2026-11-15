@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>白熊附魔大全 · BrightSky</title>
+<meta name="description" content="Aiyatsbus 与 NereusOpus 附魔速查：按名字搜索、按物品反查、品质与数值一览。">
+<meta name="theme-color" content="#101722">
+<link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hd">
+  <div class="hd-in">
+    <a class="brand" href="./">
+      <img src="logo.png" alt="" width="34" height="34">
+      <span class="brand-t">白熊附魔大全</span>
+      <span class="brand-s">BrightSky</span>
+    </a>
+    <div class="hd-stat" id="hdStat"></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="search">
+    <div class="sb">
+      <span class="sb-ico" aria-hidden="true">🔍</span>
+      <input id="q" type="search" inputmode="search" autocomplete="off" spellcheck="false"
+             placeholder="搜附魔名或效果：吸血、时运、冷却、掉落…" aria-label="搜索附魔">
+      <button id="clear" class="sb-clear" hidden aria-label="清空">✕</button>
+    </div>
+    <p class="hint">输入即筛选 · 支持中文名 / 英文 ID / 效果关键词 / 参数名 · 点卡片看完整数值</p>
+  </section>
+
+  <section class="filters">
+    <div class="frow">
+      <span class="flabel">穿在</span>
+      <div class="chips" id="chipsTarget"></div>
+    </div>
+    <div class="frow">
+      <span class="flabel">品质</span>
+      <div class="chips" id="chipsRarity"></div>
+    </div>
+    <div class="frow">
+      <span class="flabel">来源</span>
+      <div class="chips" id="chipsSrc"></div>
+    </div>
+  </section>
+
+  <div class="resbar">
+    <div id="resCount" class="rescount"></div>
+    <div class="resbar-r">
+      <select id="sort" aria-label="排序">
+        <option value="rarity">按品质（高→低）</option>
+        <option value="name">按名称</option>
+        <option value="level">按最高等级</option>
+        <option value="src">按来源</option>
+      </select>
+      <button id="reset" class="btn-ghost">重置</button>
+    </div>
+  </div>
+
+  <div id="list" class="grid"></div>
+  <p id="empty" class="empty" hidden>没有符合条件的附魔，试试换个关键词或点「重置」。</p>
+</main>
+
+<footer class="ft">
+  <span>数据由 Aiyatsbus 与 NereusOpus 的默认配置自动生成</span>
+  <span class="dot">·</span>
+  <a href="https://github.com/leafpaper47/BrightSky" target="_blank" rel="noopener">GitHub</a>
+</footer>
+
+<!-- 详情面板 -->
+<div id="drawer" class="drawer" hidden>
+  <div class="drawer-bd" id="drawerBd"></div>
+  <aside class="drawer-p" role="dialog" aria-modal="true" aria-labelledby="dName">
+    <button id="drawerX" class="drawer-x" aria-label="关闭">✕</button>
+    <div id="drawerBody"></div>
+  </aside>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
