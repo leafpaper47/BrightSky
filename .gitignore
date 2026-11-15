@@ -1,0 +1,17 @@
+# 依赖与构建产物
+site/node_modules/
+site/pnpm-lock.yaml.bak
+site/docs/.vuepress/.temp/
+site/docs/.vuepress/.cache/
+site/docs/.vuepress/dist/
+site/docs/.vuepress/.pnp*
+
+# 本机调试日志
+dev.log
+dev.err
+*.log
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini

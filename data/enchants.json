@@ -1,0 +1,6738 @@
+{
+ "aiya_rarity": {
+  "common": {
+   "key": "common",
+   "name": "普通",
+   "color": "#f8f4ed",
+   "weight": 1000,
+   "inaccessible": false
+  },
+  "uncommon": {
+   "key": "uncommon",
+   "name": "罕见",
+   "color": "#66c18c",
+   "weight": 500,
+   "inaccessible": false
+  },
+  "rare": {
+   "key": "rare",
+   "name": "精良",
+   "color": "#63bbd0",
+   "weight": 250,
+   "inaccessible": false
+  },
+  "epic": {
+   "key": "epic",
+   "name": "史诗",
+   "color": "#eb507e",
+   "weight": 50,
+   "inaccessible": false
+  },
+  "legendary": {
+   "key": "legendary",
+   "name": "传奇",
+   "color": "#fba414",
+   "weight": 10,
+   "inaccessible": false
+  },
+  "splendid": {
+   "key": "splendid",
+   "name": "稀世",
+   "color": "#fbda41",
+   "weight": 5,
+   "inaccessible": false
+  },
+  "curse": {
+   "key": "curse",
+   "name": "诅咒",
+   "color": "#d42517",
+   "weight": 25,
+   "inaccessible": false
+  },
+  "artifact": {
+   "key": "artifact",
+   "name": "皮肤",
+   "color": "#ec9bad",
+   "weight": 1,
+   "inaccessible": true
+  }
+ },
+ "aiya": [
+  {
+   "plugin": "aiya",
+   "id": "aqua_affinity",
+   "name": "水下速掘",
+   "max_level": 1,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "#66c18c",
+   "targets": [
+    "头盔"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "无视水下的挖掘速度降低效果",
+   "specific": "",
+   "variables_leveled": {},
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "bane_of_arthropods",
+   "name": "节肢杀手",
+   "max_level": 5,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "#f8f4ed",
+   "targets": [
+    "剑",
+    "斧",
+    "重锤",
+    "矛"
+   ],
+   "conflict_groups": [
+    "原版增伤类附魔"
+   ],
+   "conflicts": [],
+   "general": "对节肢动物的基础伤害提高",
+   "specific": "&7对节肢动物的基础伤害提高&a{伤害}&7，并对其施加&a1~{时间}&7的缓慢IV效果",
+   "variables_leveled": {
+    "伤害": "点:2.5*{level}",
+    "时间": "秒:1+0.5*{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "binding_curse",
+   "name": "绑定诅咒",
+   "max_level": 1,
+   "rarity_key": "curse",
+   "rarity": "诅咒",
+   "rarity_color": "#d42517",
+   "targets": [
+    "头盔",
+    "胸甲",
+    "护腿",
+    "靴子",
+    "头饰"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "被诅咒的物品穿在身上后无法卸下",
+   "specific": "",
+   "variables_leveled": {},
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "blast_protection",
+   "name": "爆炸保护",
+   "max_level": 4,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "#f8f4ed",
+   "targets": [
+    "头盔",
+    "胸甲",
+    "护腿",
+    "靴子"
+   ],
+   "conflict_groups": [
+    "原版防御类附魔"
+   ],
+   "conflicts": [],
+   "general": "减少受到的爆炸伤害",
+   "specific": "&7减少&a{减伤百分比}&7爆炸伤害 (总上限&a10级&7)",
+   "variables_leveled": {
+    "减伤百分比": "%:8*{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "breach",
+   "name": "破甲",
+   "max_level": 4,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "#f8f4ed",
+   "targets": [
+    "重锤"
+   ],
+   "conflict_groups": [
+    "原版增伤类附魔"
+   ],
+   "conflicts": [],
+   "general": "重锤攻击时无视目标部分护甲值",
+   "specific": "&7攻击无视目标&a{百分比}&7的护甲值",
+   "variables_leveled": {
+    "百分比": "%:{level}*15"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "channeling",
+   "name": "引雷",
+   "max_level": 1,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "#f8f4ed",
+   "targets": [
+    "三叉戟"
+   ],
+   "conflict_groups": [],
+   "conflicts": [
+    "激流"
+   ],
+   "general": "在雨天召唤闪电攻击生物，仅在雷暴天气时生效",
+   "specific": "",
+   "variables_leveled": {},
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "density",
+   "name": "致密",
+   "max_level": 5,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "#f8f4ed",
+   "targets": [
+    "重锤"
+   ],
+   "conflict_groups": [
+    "原版增伤类附魔"
+   ],
+   "conflicts": [],
+   "general": "摔落高度越高，重锤造成的伤害越高",
+   "specific": "&7每摔落&a1格&7时重锤造成的伤害增加&a{伤害}",
+   "variables_leveled": {
+    "伤害": "点:0.5*{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "depth_strider",
+   "name": "深海探索者",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "#63bbd0",
+   "targets": [
+    "靴子"
+   ],
+   "conflict_groups": [],
+   "conflicts": [
+    "冰霜行者"
+   ],
+   "general": "无视部分在水中受到的减速效果",
+   "specific": "&7无视&a{抵消量}&7在水中受到的减速效果",
+   "variables_leveled": {
+    "抵消量": "{1: 33, 2: 67, 3: 100, 'unit': '%'}"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "efficiency",
+   "name": "效率",
+   "max_level": 5,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "#66c18c",
+   "targets": [
+    "斧",
+    "镐",
+    "铲",
+    "锄",
+    "剪刀"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "提高破坏合适方块的速度",
+   "specific": "",
+   "variables_leveled": {},
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "feather_falling",
+   "name": "摔落缓冲",
+   "max_level": 4,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "#66c18c",
+   "targets": [
+    "靴子"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "减少受到的摔落伤害",
+   "specific": "&7减少&a{减伤百分比}&7摔落伤害 (总上限&a10级&7)",
+   "variables_leveled": {
+    "减伤百分比": "%:8*{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "feather_falling",
+   "name": "摔落保护",
+   "max_level": 4,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "#66c18c",
+   "targets": [
+    "靴子"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "减少受到的摔落伤害",
+   "specific": "&7减少&a{减伤百分比}&7摔落伤害 (总上限&a10级&7)",
+   "variables_leveled": {
+    "减伤百分比": "%:8*{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "fire_aspect",
+   "name": "火焰附加",
+   "max_level": 2,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "#63bbd0",
+   "targets": [
+    "剑",
+    "重锤",
+    "矛"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "点燃击中的生物",
+   "specific": "&7使击中的生物燃烧&a{燃烧时长}",
+   "variables_leveled": {
+    "燃烧时长": "秒:4*{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "fire_protection",
+   "name": "火焰保护",
+   "max_level": 4,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "#66c18c",
+   "targets": [
+    "头盔",
+    "胸甲",
+    "护腿",
+    "靴子"
+   ],
+   "conflict_groups": [
+    "原版防御类附魔"
+   ],
+   "conflicts": [],
+   "general": "减少受到的火焰伤害",
+   "specific": "&7减少&a{减伤百分比}&7火焰伤害 (总上限&a10级&7)",
+   "variables_leveled": {
+    "减伤百分比": "%:8*{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "flame",
+   "name": "火矢",
+   "max_level": 1,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "#63bbd0",
+   "targets": [
+    "弓"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "点燃射中的生物",
+   "specific": "&7点燃射中的生物&a5秒",
+   "variables_leveled": {},
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "fortune",
+   "name": "时运",
+   "max_level": 3,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "#eb507e",
+   "targets": [
+    "斧",
+    "镐",
+    "铲",
+    "锄"
+   ],
+   "conflict_groups": [],
+   "conflicts": [
+    "精准采集"
+   ],
+   "general": "提高破坏方块时物品的掉落数量或概率",
+   "specific": "",
+   "variables_leveled": {},
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "frost_walker",
+   "name": "冰霜行者",
+   "max_level": 2,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "#63bbd0",
+   "targets": [
+    "靴子"
+   ],
+   "conflict_groups": [
+    "深海探索者"
+   ],
+   "conflicts": [],
+   "general": "在地面上时使周围的水结冰",
+   "specific": "&7在地面上时使&a{结冰半径}&7内的水结冰",
+   "variables_leveled": {
+    "结冰半径": "格:2+{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "impaling",
+   "name": "穿刺",
+   "max_level": 5,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "#63bbd0",
+   "targets": [
+    "三叉戟"
+   ],
+   "conflict_groups": [
+    "原版增伤类附魔"
+   ],
+   "conflicts": [
+    "致密",
+    "穿刺"
+   ],
+   "general": "提高三叉戟对水生生物的基础伤害",
+   "specific": "&7对水生生物的基础伤害提高&a{伤害提高}",
+   "variables_leveled": {
+    "伤害提高": "点:2.5*{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "infinity",
+   "name": "无限",
+   "max_level": 1,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "#eb507e",
+   "targets": [
+    "弓"
+   ],
+   "conflict_groups": [],
+   "conflicts": [
+    "经验修补"
+   ],
+   "general": "射箭时不会消耗普通箭矢",
+   "specific": "",
+   "variables_leveled": {},
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "knockback",
+   "name": "击退",
+   "max_level": 2,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "#66c18c",
+   "targets": [
+    "剑",
+    "矛"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "增加击退距离",
+   "specific": "&7使横向击退距离增加&a{横向}&7",
+   "variables_leveled": {
+    "横向": "格:2.6*({level}-1)+1.6"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "looting",
+   "name": "抢夺",
+   "max_level": 3,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "#eb507e",
+   "targets": [
+    "剑",
+    "矛"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "提高击杀生物时物品的掉落数量或掉落概率",
+   "specific": "&7使大部分常见掉落物的数量上限提高&a{上限}&7，使稀有掉落物的掉落概率提高&a{概率}",
+   "variables_leveled": {
+    "上限": "个:{level}",
+    "概率": "%:{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "loyalty",
+   "name": "忠诚",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "#63bbd0",
+   "targets": [
+    "三叉戟"
+   ],
+   "conflict_groups": [],
+   "conflicts": [
+    "激流"
+   ],
+   "general": "使掷出后的三叉戟返回",
+   "specific": "",
+   "variables_leveled": {},
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "luck_of_the_sea",
+   "name": "海之眷顾",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "#63bbd0",
+   "targets": [
+    "钓鱼竿"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "提高钓鱼时获得宝藏的概率",
+   "specific": "&7使钓鱼时获得宝藏的概率提高&a{概率}",
+   "variables_leveled": {
+    "概率": "%:2.1*{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "lunge",
+   "name": "突进",
+   "max_level": 3,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "#66c18c",
+   "targets": [
+    "矛"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "戳刺攻击时向前推进",
+   "specific": "&7获得&a{速度}&7的加速",
+   "variables_leveled": {
+    "速度": "米/秒:9.16*{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "lure",
+   "name": "饵钓",
+   "max_level": 3,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "#66c18c",
+   "targets": [
+    "钓鱼竿"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "减少上钩等待时间",
+   "specific": "&7使上钩等待时间减少&a{时间}",
+   "variables_leveled": {
+    "时间": "秒:5*{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "mending",
+   "name": "经验修补",
+   "max_level": 1,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "#fba414",
+   "targets": [
+    "可损坏物品"
+   ],
+   "conflict_groups": [],
+   "conflicts": [
+    "无限"
+   ],
+   "general": "转化获得的经验为物品的耐久度",
+   "specific": "",
+   "variables_leveled": {},
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "multishot",
+   "name": "多重射击",
+   "max_level": 1,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "#66c18c",
+   "targets": [
+    "弩"
+   ],
+   "conflict_groups": [],
+   "conflicts": [
+    "穿透"
+   ],
+   "general": "消耗一支箭可射出三只箭",
+   "specific": "",
+   "variables_leveled": {},
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "piercing",
+   "name": "穿透",
+   "max_level": 4,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "#66c18c",
+   "targets": [
+    "弩"
+   ],
+   "conflict_groups": [],
+   "conflicts": [
+    "多重射击"
+   ],
+   "general": "使射出的箭可以穿过多个实体",
+   "specific": "&7射出的箭可以穿过最多&a{数量}&7实体",
+   "variables_leveled": {
+    "数量": "个:1+{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "power",
+   "name": "力量",
+   "max_level": 5,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "#63bbd0",
+   "targets": [
+    "弓"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "提高箭矢的伤害",
+   "specific": "",
+   "variables_leveled": {},
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "projectile_protection",
+   "name": "弹射物保护",
+   "max_level": 4,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "#f8f4ed",
+   "targets": [
+    "头盔",
+    "胸甲",
+    "护腿",
+    "靴子"
+   ],
+   "conflict_groups": [
+    "原版防御类附魔"
+   ],
+   "conflicts": [],
+   "general": "减少受到的弹射物伤害",
+   "specific": "&7减少&a{减伤百分比}&7弹射物伤害 (总上限&a10级&7)",
+   "variables_leveled": {
+    "减伤百分比": "%:8*{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "protection",
+   "name": "保护",
+   "max_level": 4,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "#63bbd0",
+   "targets": [
+    "头盔",
+    "胸甲",
+    "护腿",
+    "靴子"
+   ],
+   "conflict_groups": [
+    "原版防御类附魔"
+   ],
+   "conflicts": [],
+   "general": "减少受到的伤害",
+   "specific": "&7减少&a{减伤百分比}&7伤害 (总上限&a20级&7)",
+   "variables_leveled": {
+    "减伤百分比": "%:4*{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "punch",
+   "name": "冲击",
+   "max_level": 2,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "#63bbd0",
+   "targets": [
+    "弓"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "提高箭矢的击退距离",
+   "specific": "&7使横向击退距离提高&a{横向}&7",
+   "variables_leveled": {
+    "横向": "格:3*{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "quick_charge",
+   "name": "快速装填",
+   "max_level": 3,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "#66c18c",
+   "targets": [
+    "弩"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "减少弩的填装时间",
+   "specific": "&7使弩的填装时间减少&a{时间}",
+   "variables_leveled": {
+    "时间": "秒:0.25*{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "respiration",
+   "name": "水下呼吸",
+   "max_level": 3,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "#66c18c",
+   "targets": [
+    "头盔"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "减少水下氧气消耗速率",
+   "specific": "&7每次消耗氧气值时有&a{概率}&7不消耗氧气或受到窒息伤害",
+   "variables_leveled": {
+    "概率": "%:{level}/{level}+1"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "riptide",
+   "name": "激流",
+   "max_level": 3,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "#66c18c",
+   "targets": [
+    "三叉戟"
+   ],
+   "conflict_groups": [],
+   "conflicts": [
+    "引雷",
+    "忠诚"
+   ],
+   "general": "将玩家向掷出三叉戟的方向发射，仅在水中或雨中生效",
+   "specific": "",
+   "variables_leveled": {},
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "sharpness",
+   "name": "锋利",
+   "max_level": 5,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "#66c18c",
+   "targets": [
+    "剑",
+    "斧",
+    "矛"
+   ],
+   "conflict_groups": [
+    "原版增伤类附魔"
+   ],
+   "conflicts": [
+    "致密",
+    "穿刺"
+   ],
+   "general": "提高近战攻击伤害",
+   "specific": "&7近战攻击伤害提高&a{伤害提高}",
+   "variables_leveled": {
+    "伤害提高": "点:0.5*{level}+0.5"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "silk_touch",
+   "name": "精准采集",
+   "max_level": 1,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "#63bbd0",
+   "targets": [
+    "斧",
+    "镐",
+    "铲",
+    "锄",
+    "剪刀"
+   ],
+   "conflict_groups": [],
+   "conflicts": [
+    "时运"
+   ],
+   "general": "使破坏部分方块时掉落其本身",
+   "specific": "",
+   "variables_leveled": {},
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "smite",
+   "name": "亡灵杀手",
+   "max_level": 5,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "#f8f4ed",
+   "targets": [
+    "剑",
+    "斧",
+    "重锤",
+    "矛"
+   ],
+   "conflict_groups": [
+    "原版增伤类附魔"
+   ],
+   "conflicts": [
+    "致密",
+    "穿刺"
+   ],
+   "general": "提高对亡灵生物的基础伤害",
+   "specific": "&7对亡灵生物的基础伤害提高&a{提高基础伤害}",
+   "variables_leveled": {
+    "提高基础伤害": "点:2.5*{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "soul_speed",
+   "name": "灵魂疾行",
+   "max_level": 3,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "#66c18c",
+   "targets": [
+    "靴子"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "提高在灵魂沙和灵魂土上的移动速度",
+   "specific": "&7使在灵魂沙和灵魂土上的移动速度提高&a{速度}",
+   "variables_leveled": {
+    "速度": "%:30+{level}*10.5"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "sweeping",
+   "name": "横扫之刃",
+   "max_level": 3,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "#66c18c",
+   "targets": [
+    "剑"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "提高横扫攻击的伤害",
+   "specific": "&7横扫攻击的伤害附加&a{比例}&7的武器基础伤害",
+   "variables_leveled": {
+    "比例": "{1: 50, 2: 67, 3: 75, 'unit': '%'}"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "sweeping_edge",
+   "name": "横扫之刃",
+   "max_level": 3,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "#66c18c",
+   "targets": [
+    "剑"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "提高横扫攻击的伤害",
+   "specific": "&7横扫攻击的伤害附加&a{比例}&7的武器基础伤害",
+   "variables_leveled": {
+    "比例": "{1: 50, 2: 67, 3: 75, 'unit': '%'}"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "swift_sneak",
+   "name": "迅捷潜行",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "#63bbd0",
+   "targets": [
+    "护腿"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "提高玩家潜行时的移动速度",
+   "specific": "&7潜行时的移动速度提高&a{速度}",
+   "variables_leveled": {
+    "速度": "%:50*{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "thorns",
+   "name": "荆棘",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "#63bbd0",
+   "targets": [
+    "头盔",
+    "胸甲",
+    "护腿",
+    "靴子"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "受到攻击时有概率对攻击者造成伤害，并消耗盔甲耐久",
+   "specific": "&7受到攻击时有&a{概率}&7对攻击者造成&a1~5点&7的伤害，并消耗&a2点&7耐久度",
+   "variables_leveled": {
+    "概率": "%:15*{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "unbreaking",
+   "name": "耐久",
+   "max_level": 3,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "#66c18c",
+   "targets": [
+    "可损坏物品"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "减少物品损耗耐久的概率",
+   "specific": "",
+   "variables_leveled": {},
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "vanishing_curse",
+   "name": "消失诅咒",
+   "max_level": 1,
+   "rarity_key": "curse",
+   "rarity": "诅咒",
+   "rarity_color": "#d42517",
+   "targets": [
+    "所有物品"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "被诅咒的物品会在玩家死亡时消失",
+   "specific": "",
+   "variables_leveled": {},
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "wind_burst",
+   "name": "风暴",
+   "max_level": 3,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "#f8f4ed",
+   "targets": [
+    "重锤"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "攻击时产生风弹爆炸",
+   "specific": "",
+   "variables_leveled": {},
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": true,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "accumulating",
+   "name": "蓄能",
+   "max_level": 1,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "#eb507e",
+   "targets": [
+    "剑",
+    "斧"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "每击杀若干只怪物后，下一次攻击伤害增加",
+   "specific": "&7每击杀&a{击杀累计}&7生物后，下一次攻击伤害增加&a{伤害增加百分比}",
+   "variables_leveled": {
+    "击杀累计": "只:4-{level}",
+    "伤害增加百分比": "%:15.0*{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [
+    {
+     "name": "on-damage",
+     "listen": "entity-damage-other"
+    },
+    {
+     "name": "on-kill",
+     "listen": "entity-death"
+    }
+   ],
+   "vanilla": false,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "aiming",
+   "name": "索敌",
+   "max_level": 1,
+   "rarity_key": "splendid",
+   "rarity": "稀世",
+   "rarity_color": "#fbda41",
+   "targets": [
+    "弓"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "箭矢会自动追踪目标",
+   "specific": "",
+   "variables_leveled": {},
+   "variables_ordinary": {
+    "steer_coefficient_xz": "0.1",
+    "steer_coefficient_y": "0.08",
+    "blacklist": "[\"ALLAY\", \"VILLAGER\", \"WANDERING_TRADER\", \"WOLF\", \"CAT\", \"BAT\", \"ENDERMAN\", \"HORSE\", \"SKELETON_HORSE\", \"ZOMBIE_HORSE\", \"PIG\", \"COW\", \"SHEEP\", \"CAMEL\", \"CHICKEN\", \"COD\", \"DOLPHIN\", \"DONKEY\", \"FOX\", \"FROG\", \"GOAT\", \"IRON_GOLEM\", \"LLAMA\", \"MULE\", \"OCELOT\", \"PANDA\", \"PARROT\", \"POLAR_BEAR\", \"PUFFERFISH\", \"RABBIT\", \"SALMON\", \"SNIFFER\", \"SNOW_GOLEM\", \"TRADER_LLAMA\", \"TROPICAL_FISH\", \"TURTLE\"]"
+   },
+   "listeners": [
+    {
+     "name": "on-shoot-bow",
+     "listen": "entity-shoot-bow"
+    }
+   ],
+   "vanilla": false,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "artisanship",
+   "name": "匠心",
+   "max_level": 3,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "#fba414",
+   "targets": [
+    "镐",
+    "铲",
+    "锄"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "挖掘方块累积匠心，积累越多挖掘越快",
+   "specific": "&7挖掘方块累积匠心，每累积&a{进阶需求}&7提升一阶挖掘速度，最高&a{最大阶数}&7",
+   "variables_leveled": {
+    "进阶需求": "个:5000-1000*{level}",
+    "最大阶数": "阶:3"
+   },
+   "variables_ordinary": {},
+   "listeners": [
+    {
+     "name": "on-break",
+     "listen": "block-break"
+    }
+   ],
+   "vanilla": false,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "barb",
+   "name": "棘盾",
+   "max_level": 3,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "#eb507e",
+   "targets": [
+    "盾牌"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "举盾格挡近战攻击时反弹伤害给攻击者",
+   "specific": "&7举盾格挡近战攻击时反弹&a{反弹伤害}&7给攻击者",
+   "variables_leveled": {
+    "反弹伤害": "点:2+1*{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [
+    {
+     "name": "on-damaged",
+     "listen": "entity-damaged-by-other"
+    }
+   ],
+   "vanilla": false,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "bash",
+   "name": "盾冲",
+   "max_level": 3,
+   "rarity_key": "splendid",
+   "rarity": "稀世",
+   "rarity_color": "#fbda41",
+   "targets": [
+    "盾牌"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "主手持盾时右键向前冲锋，击退并伤害沿途敌人",
+   "specific": "&7主手持盾时右键冲锋&a{冲刺距离}&7，对命中敌人造成&a{伤害}&7并击退&a{击退力度}&7，冷却&a{冷却}&7",
+   "variables_leveled": {
+    "冲刺距离": "格:3+1*{level}",
+    "伤害": "点:6+3*{level}",
+    "击退力度": "倍:1.5+0.5*{level}",
+    "冷却": "秒:8-{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": false,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "bouncy_arrow",
+   "name": "跃动",
+   "max_level": 1,
+   "rarity_key": "splendid",
+   "rarity": "稀世",
+   "rarity_color": "#fbda41",
+   "targets": [
+    "弓",
+    "弩"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "射箭撞方块反弹并有概率分裂",
+   "specific": "&7射箭撞方块可反弹最多&a{次数}&7并有&a{概率}&7的概率分裂",
+   "variables_leveled": {
+    "次数": "次:{level}",
+    "速度": ":0.5+0.1*{level}",
+    "概率": "%:20*{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [
+    {
+     "name": "on-projectile-hit",
+     "listen": "projectile-hit"
+    }
+   ],
+   "vanilla": false,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "counter",
+   "name": "反击",
+   "max_level": 3,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "#fba414",
+   "targets": [
+    "盾牌"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "举盾格挡时记录伤害，短时间内下一次攻击造成额外伤害",
+   "specific": "&7举盾格挡时记录伤害，&a{蓄力窗口}&7内下一次攻击额外造成&a{反击倍率}&7倍伤害",
+   "variables_leveled": {
+    "蓄力窗口": "秒:3+1*{level}",
+    "反击倍率": "倍:0.5+0.5*{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [
+    {
+     "name": "on-block",
+     "listen": "entity-damaged-by-other"
+    },
+    {
+     "name": "on-attack",
+     "listen": "entity-damage-other"
+    }
+   ],
+   "vanilla": false,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "jelly_legs",
+   "name": "弹跳鞋",
+   "max_level": 1,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "#63bbd0",
+   "targets": [
+    "靴子"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "摔伤时可减少伤害并弹起",
+   "specific": "&7受到不超过&a{最大高度}&7的摔伤时减少&a{减少伤害}&7并弹起",
+   "variables_leveled": {
+    "最大高度": "{1: 16, 2: 48, 3: 256, 'unit': '格'}",
+    "减少伤害": "点:3*{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [
+    {
+     "name": "on-entity-damage",
+     "listen": "entity-damage"
+    }
+   ],
+   "vanilla": false,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "planter",
+   "name": "播种机",
+   "max_level": 1,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "#fba414",
+   "targets": [
+    "锄"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "右击可范围播种作物(需要种子)",
+   "specific": "&7右击可范围播种作物(需要种子) (&a{边长}×&a{边长} &7冷却:&a{冷却}&7)",
+   "variables_leveled": {
+    "冷却": "秒:3.5-{level}",
+    "边长": "格:{level}+1"
+   },
+   "variables_ordinary": {
+    "作物": "{\"BEETROOT_SEEDS\": \"BEETROOTS\", \"MELON_SEEDS\": \"MELON_STEM\", \"PUMPKIN_SEEDS\": \"PUMPKIN_STEM\", \"TORCHFLOWER_SEEDS\": \"TORCHFLOWER_CROP\", \"WHEAT_SEEDS\": \"WHEAT\", \"CARROT\": \"CARROTS\", \"POTATO\": \"POTATOES\"}",
+    "下界作物": "{\"NETHER_WART\": \"NETHER_WART\"}"
+   },
+   "listeners": [
+    {
+     "name": "on-right-click",
+     "listen": "player-interact"
+    }
+   ],
+   "vanilla": false,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "propulsion",
+   "name": "推进器",
+   "max_level": 1,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "#eb507e",
+   "targets": [
+    "靴子"
+   ],
+   "conflict_groups": [],
+   "conflicts": [
+    "弹跳鞋"
+   ],
+   "general": "在空中下蹲可触发二段跳 (冷却:&a{冷却}&7)",
+   "specific": "",
+   "variables_leveled": {
+    "冷却": "秒:6"
+   },
+   "variables_ordinary": {},
+   "listeners": [
+    {
+     "name": "on-sneak",
+     "listen": "player-toggle-sneak"
+    }
+   ],
+   "vanilla": false,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "replanter",
+   "name": "再植",
+   "max_level": 1,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "#66c18c",
+   "targets": [
+    "靴子"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "踩坏耕地时，只会使作物退化而不是掉落",
+   "specific": "&7踩坏耕地时，只会使作物退化&a{退化阶段}",
+   "variables_leveled": {
+    "退化阶段": "阶段:3-{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [
+    {
+     "name": "on-physical",
+     "listen": "player-interact"
+    }
+   ],
+   "vanilla": false,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "sword_beam",
+   "name": "剑气",
+   "max_level": 3,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "#eb507e",
+   "targets": [
+    "剑"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "右键释放剑气，穿透路径上的敌人",
+   "specific": "&7右键释放剑气，对路径上的敌人造成&a{伤害}&7伤害，冷却&a{冷却}&7",
+   "variables_leveled": {
+    "伤害": "点:8+4*{level}",
+    "射程": "格:8+2*{level}",
+    "冷却": "秒:120-20*{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [],
+   "vanilla": false,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "tremor",
+   "name": "震地",
+   "max_level": 3,
+   "rarity_key": "splendid",
+   "rarity": "稀世",
+   "rarity_color": "#fbda41",
+   "targets": [
+    "弓"
+   ],
+   "conflict_groups": [],
+   "conflicts": [],
+   "general": "蓄力范围真伤并减速, 满蓄力追加击飞效果",
+   "specific": "",
+   "variables_leveled": {
+    "宽度下限": "格:1+{level}*0.5",
+    "宽度上限": "格:3.5+{level}*0.5",
+    "深度增长速度": "格/刻:0.7+{level}*0.1",
+    "基础伤害倍率": "倍:{level}*2.0",
+    "敌人缓慢等级": "级:{level}-1",
+    "冷却": "秒:5"
+   },
+   "variables_ordinary": {
+    "最大深度": "25.0",
+    "过滤生物类型": "[\"ARMOR_STAND\"]"
+   },
+   "listeners": [
+    {
+     "name": "on-move",
+     "listen": "player-move"
+    },
+    {
+     "name": "on-released",
+     "listen": "aiyatsbus-bow-charge-released"
+    },
+    {
+     "name": "on-break",
+     "listen": "aiyatsbus-bow-charge-break"
+    },
+    {
+     "name": "on-prepare",
+     "listen": "aiyatsbus-bow-charge-prepare"
+    }
+   ],
+   "vanilla": false,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "twinge",
+   "name": "扎刺",
+   "max_level": 1,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "#fba414",
+   "targets": [
+    "三叉戟"
+   ],
+   "conflict_groups": [
+    "持续类附魔",
+    "概率类附魔"
+   ],
+   "conflicts": [],
+   "general": "近战攻击时有概率使对手流血",
+   "specific": "&7近战攻击时有&a{概率}&7的概率使对手流血 (伤害:&a{每次伤害}&7/&a{间隔} &7持续&a{持续时间}&7)",
+   "variables_leveled": {
+    "概率": "%:8*{level}",
+    "冷却": "秒:30-2.5*{level}",
+    "间隔": "秒:1-0.1*{level}",
+    "每次伤害": "点:0.5*{level}",
+    "持续时间": "秒:5-0.5*{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [
+    {
+     "name": "on-damage",
+     "listen": "entity-damage-other"
+    }
+   ],
+   "vanilla": false,
+   "enabled": true
+  },
+  {
+   "plugin": "aiya",
+   "id": "wings",
+   "name": "反重力",
+   "max_level": 3,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "#fba414",
+   "targets": [
+    "靴子"
+   ],
+   "conflict_groups": [],
+   "conflicts": [
+    "经验修补"
+   ],
+   "general": "可进入飞行状态，飞行时持续消耗装备耐久",
+   "specific": "&7可进入飞行状态，飞行时每&a2秒&7消耗装备&a{消耗耐久}&7耐久",
+   "variables_leveled": {
+    "消耗耐久": "点:4-{level}"
+   },
+   "variables_ordinary": {},
+   "listeners": [
+    {
+     "name": "on-fall",
+     "listen": "entity-damage"
+    }
+   ],
+   "vanilla": false,
+   "enabled": true
+  }
+ ],
+ "nereus_rarity": {
+  "common": {
+   "key": "common",
+   "name": "普通",
+   "color": "§7",
+   "weight": 500
+  },
+  "uncommon": {
+   "key": "uncommon",
+   "name": "罕见",
+   "color": "§a",
+   "weight": 250
+  },
+  "rare": {
+   "key": "rare",
+   "name": "精良",
+   "color": "§b",
+   "weight": 125
+  },
+  "epic": {
+   "key": "epic",
+   "name": "史诗",
+   "color": "§d",
+   "weight": 25
+  },
+  "legendary": {
+   "key": "legendary",
+   "name": "传奇",
+   "color": "§6",
+   "weight": 5
+  },
+  "unknown": {
+   "key": "unknown",
+   "name": "稀世",
+   "color": "§e",
+   "weight": 1
+  },
+  "curse": {
+   "key": "curse",
+   "name": "诅咒",
+   "color": "§c",
+   "weight": 25
+  },
+  "artifact": {
+   "key": "artifact",
+   "name": "皮肤",
+   "color": "§7",
+   "weight": 1
+  }
+ },
+ "nereus": [
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "abrasion",
+   "name": "Abrasion",
+   "display_name": "磨蚀",
+   "description": "在攻击时有概率损坏对手盔甲",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "3*level",
+    "durability-decrease": "level",
+    "require-full-charge": "True"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "accumulation",
+   "name": "Accumulation",
+   "display_name": "蓄力",
+   "description": "长时间不攻击状态下伤害提升",
+   "max_level": 8,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+level*0.05",
+    "duration": "160-10*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "aerial",
+   "name": "Aerial",
+   "display_name": "裂空",
+   "description": "在空中射出的箭矢伤害提升",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow",
+    "crossbow"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.1*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "aiming",
+   "name": "Aiming",
+   "display_name": "索敌",
+   "description": "射出的箭矢将自动追踪目标",
+   "max_level": 5,
+   "rarity_key": "unknown",
+   "rarity": "稀世",
+   "rarity_color": "§e",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "range": "4+level",
+    "require-full-charge": "False",
+    "repeat-ticks": "10-level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "annihilate",
+   "name": "Annihilate",
+   "display_name": "威慑",
+   "description": "攻击时产生强力击退效果",
+   "max_level": 2,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes"
+   ],
+   "conflicts": [
+    "knockback",
+    "tornado",
+    "grapple"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "velocity": "level*2.5"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "arachnid",
+   "name": "Arachnid",
+   "display_name": "剿蛛",
+   "description": "对蜘蛛的伤害提升",
+   "max_level": 4,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "§7",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "trident",
+    "bow"
+   ],
+   "conflicts": [
+    "serrated",
+    "phantasm",
+    "impaling",
+    "power",
+    "force",
+    "slaughter",
+    "boss_hunter",
+    "cubism"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.5*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "arborist",
+   "name": "Arborist",
+   "display_name": "收获",
+   "description": "从树叶中获得更多木棍、苹果",
+   "max_level": 4,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "axes",
+    "shears"
+   ],
+   "conflicts": [
+    "silk_touch"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "items": "[\"stick\", \"apple\"]",
+    "chance": "5*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "arcanic",
+   "name": "Arcanic",
+   "display_name": "无缝",
+   "description": "有概率免疫药水伤害",
+   "max_level": 5,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets",
+    "chestplates",
+    "leggings",
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "8*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "atmospheric",
+   "name": "Atmospheric",
+   "display_name": "抛射",
+   "description": "在空中时投掷的三叉戟伤害提升",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "trident"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.1*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "backstab",
+   "name": "Backstab",
+   "display_name": "不意",
+   "description": "攻击对手后方时伤害提升",
+   "max_level": 6,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.05*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "bantering",
+   "name": "Bantering",
+   "display_name": "戏谑",
+   "description": "使得周围生物的伤害吸收总量减少(冷却时间内对于同个生物仅会生效一次)，盔甲会自动扣除耐久",
+   "max_level": 6,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets",
+    "chestplates",
+    "leggings",
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "range": "3+level*0.5",
+    "absorption-multiplier": "1-0.1*level",
+    "cooldown": "10-level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "beheading",
+   "name": "Beheading",
+   "display_name": "处决",
+   "description": "击杀生物时有概率掉落头颅",
+   "max_level": 3,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes"
+   ],
+   "conflicts": [
+    "looting"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "3*level",
+    "custom-heads": "[\"enderman:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTZjMGIzNmQ1M2ZmZjY5YTQ5YzdkNmYzOTMyZjJiMGZlOTQ4ZTAzMjIyNmQ1ZTgwNDVlYzU4NDA4YTM2ZTk1MSJ9fX0=\", \"spider:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2Q1NDE1NDFkYWFmZjUwODk2Y2QyNThiZGJkZDRjZjgwYzNiYTgxNjczNTcyNjA3OGJmZTM5MzkyN2U1N2YxIn19fQ==\", \"cave_spider:eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDE2NDVkZmQ3N2QwOTkyMzEwN2IzNDk2ZTk0ZWViNWMzMDMyOWY5N2VmYzk2ZWQ3NmUyMjZlOTgyMjQifX19\"]"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "blast_mining",
+   "name": "BlastMining",
+   "display_name": "立方",
+   "description": "每次挖掘立方范围的方块",
+   "max_level": 1,
+   "rarity_key": "unknown",
+   "rarity": "稀世",
+   "rarity_color": "§e",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "pickaxes"
+   ],
+   "conflicts": [
+    "drill",
+    "vein"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "disable-on-sneak": "True",
+    "enable-sound": "False",
+    "permission-check": "True",
+    "hardness-check": "bedrock,obsidian",
+    "blacklist": "SKELETON_SKULL,WITHER_SKELETON_SKULL,CREEPER_HEAD,CREEPER_WALL_HEAD,PIGLIN_HEAD,PIGLIN_WALL_HEAD,PLAYER_HEAD,PLAYER_WALL_HEAD,ZOMBIE_HEAD,ZOMBIE_WALL_HEAD",
+    "per-tick": "12",
+    "chance": "100",
+    "range_x": "level+1",
+    "range_y": "level+1",
+    "range_z": "level+1"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "blind",
+   "name": "Blind",
+   "display_name": "致盲",
+   "description": "射出的箭矢有概率致盲命中对象",
+   "max_level": 3,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow",
+    "crossbow"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "level*3",
+    "duration": "level*40",
+    "amplifier": "level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "block_breather",
+   "name": "BlockBreather",
+   "display_name": "无氧",
+   "description": "有概率免疫窒息伤害",
+   "max_level": 2,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "§7",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "50*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "boss_hunter",
+   "name": "BossHunter",
+   "display_name": "破魔",
+   "description": "对BOSS的伤害提升",
+   "max_level": 4,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow",
+    "crossbow"
+   ],
+   "conflicts": [
+    "serrated",
+    "phantasm",
+    "impaling",
+    "power",
+    "force",
+    "slaughter",
+    "arachnid",
+    "cubism"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.25*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "buckshot",
+   "name": "Buckshot",
+   "display_name": "火力",
+   "description": "同时射出多支分散箭矢",
+   "max_level": 2,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow"
+   ],
+   "conflicts": [
+    "succession",
+    "pentashot",
+    "tripleshot"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "amount": "2*level",
+    "spread": "0.2"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "carve",
+   "name": "Carve",
+   "display_name": "破军",
+   "description": "暴击时提升伤害并溅射至周围实体",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "axes"
+   ],
+   "conflicts": [
+    "cleave",
+    "criticals"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.05*level",
+    "damage-splash-multiplier": "10*level",
+    "range": "0.5*level",
+    "require-full-charge": "True"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "cerebral",
+   "name": "Cerebral",
+   "display_name": "穿颅",
+   "description": "射出的箭矢爆头伤害提升",
+   "max_level": 6,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow",
+    "crossbow",
+    "trident"
+   ],
+   "conflicts": [
+    "collateral"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.05*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "chopless",
+   "name": "Chopless",
+   "display_name": "钝化",
+   "description": "来自斧的伤害降低",
+   "max_level": 6,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets",
+    "chestplates",
+    "leggings",
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1-0.05*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "cleave",
+   "name": "Cleave",
+   "display_name": "碎星",
+   "description": "伤害对手时溅射伤害至周围生物",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "axes"
+   ],
+   "conflicts": [
+    "carve"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-splash-multiplier": "15*level",
+    "range": "level",
+    "require-full-charge": "True"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "collateral",
+   "name": "Collateral",
+   "display_name": "穿心",
+   "description": "射出的箭矢伤害降低但能破盾并穿透生物",
+   "max_level": 1,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow"
+   ],
+   "conflicts": [
+    "cerebral"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "0.5"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "conceal",
+   "name": "Conceal",
+   "display_name": "隐匿",
+   "description": "让怪物自动追踪的距离变短",
+   "max_level": 4,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets",
+    "chestplates",
+    "leggings",
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "range": "16-level*3"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "confusion",
+   "name": "Confusion",
+   "display_name": "错位",
+   "description": "在攻击时有概率打乱对手主手与副手的物品",
+   "max_level": 3,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "3*level",
+    "require-full-charge": "True"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "conversion",
+   "name": "Conversion",
+   "display_name": "置换",
+   "description": "受到攻击时有概率使对手主副手物品切换",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets",
+    "chestplates",
+    "leggings",
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "3*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "convertion",
+   "name": "Convertion",
+   "display_name": "转化",
+   "description": "刷新技能预言的内容",
+   "max_level": 3,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "§7",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "all"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {}
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "coordination",
+   "name": "Coordination",
+   "display_name": "统筹",
+   "description": "下一次铁砧操作经验折半",
+   "max_level": 2,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "all"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "level_multiplier": "1-0.4*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "corrosive",
+   "name": "Corrosive",
+   "display_name": "侵损",
+   "description": "射出的箭矢有概率损坏对手的装备",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow",
+    "crossbow"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "5*level",
+    "durability-decrease": "level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "cranial",
+   "name": "Cranial",
+   "display_name": "透骨",
+   "description": "投掷的三叉戟爆头伤害提升",
+   "max_level": 6,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "trident"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.05*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "criticals",
+   "name": "Criticals",
+   "display_name": "暴戾",
+   "description": "暴击伤害提升",
+   "max_level": 6,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes"
+   ],
+   "conflicts": [
+    "carve"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.05*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "cubism",
+   "name": "Cubism",
+   "display_name": "分解",
+   "description": "对史莱姆和岩浆怪的伤害提升",
+   "max_level": 4,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "§7",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes",
+    "bow",
+    "crossbow"
+   ],
+   "conflicts": [
+    "serrated",
+    "phantasm",
+    "impaling",
+    "power",
+    "force",
+    "slaughter",
+    "boss_hunter",
+    "arachnid"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.5*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "defender",
+   "name": "Defender",
+   "display_name": "明辨",
+   "description": "防止伤害自己的宠物",
+   "max_level": 1,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "§7",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow",
+    "crossbow",
+    "swords",
+    "axes"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {}
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "deflection",
+   "name": "Deflection",
+   "display_name": "偏光",
+   "description": "反弹一部分抵挡的伤害并使盾牌进入冷却期",
+   "max_level": 4,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "shield"
+   ],
+   "conflicts": [
+    "sycophant"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "percent": "5*level",
+    "cooldown": "8-level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "defusion",
+   "name": "Defusion",
+   "display_name": "拆弹",
+   "description": "对爬行者的伤害提升",
+   "max_level": 4,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "§7",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes",
+    "trident",
+    "bow"
+   ],
+   "conflicts": [
+    "sharpness",
+    "bane_of_arthropods",
+    "smite",
+    "razor",
+    "ender_slayer",
+    "introversion",
+    "serrated",
+    "phantasm",
+    "arachnid",
+    "impaling",
+    "power",
+    "force",
+    "slaughter"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.5*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "dejecting",
+   "name": "Dejecting",
+   "display_name": "黯然",
+   "description": "使得周围的生物获得缓慢II，盔甲会自动扣除耐久",
+   "max_level": 5,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets",
+    "chestplates",
+    "leggings",
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "range": "5+level*0.5",
+    "duration": "100+20*level",
+    "amplifier": "2"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "dexterous",
+   "name": "Dexterous",
+   "display_name": "瞬息",
+   "description": "攻击速度提升",
+   "max_level": 2,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "cooldown-decreased": "10*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "disable",
+   "name": "Disable",
+   "display_name": "疲倦",
+   "description": "在攻击时有概率使对手获得挖掘疲劳效果",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "axes"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "require-full-charge": "True",
+    "chance": "3*level",
+    "duration": "20*level",
+    "amplifier": "level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "disappear",
+   "name": "Disappear",
+   "display_name": "脱身",
+   "description": "在低血量时获得隐身效果",
+   "max_level": 6,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets",
+    "chestplates",
+    "leggings",
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "min-health-percent": "0.05*level",
+    "repeat-ticks": "100"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "diurnal",
+   "name": "Diurnal",
+   "display_name": "昼行",
+   "description": "在白天时造成的伤害提升",
+   "max_level": 4,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [
+    "nocturnal"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.05*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "diverse",
+   "name": "Diverse",
+   "display_name": "克剑",
+   "description": "对持剑生物的伤害提升",
+   "max_level": 6,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "axes"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.05*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "dousing",
+   "name": "Dousing",
+   "display_name": "熄灭",
+   "description": "射出的箭矢有概率熄灭落点区域火焰",
+   "max_level": 4,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "§7",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow",
+    "crossbow"
+   ],
+   "conflicts": [
+    "ignite"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "25*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "drill",
+   "name": "Drill",
+   "display_name": "穿凿",
+   "description": "挖掘时连同后方的方块",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "pickaxes"
+   ],
+   "conflicts": [
+    "lumberjack",
+    "blast_mining",
+    "vein"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "disable-on-sneak": "True",
+    "enable-sound": "False",
+    "permission-check": "True",
+    "hardness-check": "bedrock,obisidian,ender_portal_frame",
+    "range": "level",
+    "chance": "100"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "dullness",
+   "name": "Dullness",
+   "display_name": "弱敌",
+   "description": "在攻击时有概率让对手获得虚弱效果",
+   "max_level": 3,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "require-full-charge": "True",
+    "chance": "3*level",
+    "duration": "40*level",
+    "amplifier": "level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "dweller",
+   "name": "Dweller",
+   "display_name": "卫戍",
+   "description": "对灾厄村民的伤害提升",
+   "max_level": 4,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "§7",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.5*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "economical",
+   "name": "Economical",
+   "display_name": "节能",
+   "description": "使用烟花火箭加速时有概率不消耗",
+   "max_level": 4,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "elytra"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "12.5*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "electroshock",
+   "name": "Electroshock",
+   "display_name": "天雷",
+   "description": "格挡攻击时有概率雷击你的对手",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "shield"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "3*level",
+    "damage": "3+level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "end_infusion",
+   "name": "EndInfusion",
+   "display_name": "尽头",
+   "description": "在末地造成的伤害提升",
+   "max_level": 5,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "bow",
+    "crossbow"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.08*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "ender_slayer",
+   "name": "EnderSlayer",
+   "display_name": "终末",
+   "description": "对末地生物的伤害提升",
+   "max_level": 4,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "§7",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes"
+   ],
+   "conflicts": [
+    "sharpness",
+    "bane_of_arthropods",
+    "smite",
+    "defusion",
+    "razor",
+    "introversion"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.5*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "energizing",
+   "name": "Energizing",
+   "display_name": "活力",
+   "description": "挖掘后获得急迫效果",
+   "max_level": 3,
+   "rarity_key": "unknown",
+   "rarity": "稀世",
+   "rarity_color": "§e",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "pickaxes",
+    "axes",
+    "shovels",
+    "hoes"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "duration": "8*level",
+    "amplifier": "level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "evasion",
+   "name": "Evasion",
+   "display_name": "闪避",
+   "description": "受到伤害时有概率免疫",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets",
+    "chestplates",
+    "leggings",
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "2*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "extinguishing",
+   "name": "Extinguishing",
+   "display_name": "绝热",
+   "description": "受到火焰伤害时有概率直接将身上的火焰扑灭",
+   "max_level": 4,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets",
+    "chestplates",
+    "leggings",
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "10*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "extract",
+   "name": "Extract",
+   "display_name": "滋润",
+   "description": "造成伤害时转化一部分为己方恢复血量",
+   "max_level": 3,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "§6",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "trident",
+    "swords",
+    "axes",
+    "bow",
+    "crossbow"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "heal": "(0.1*level)*damage"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "famine",
+   "name": "Famine",
+   "display_name": "啜食",
+   "description": "在攻击时有概率使对手获得饥饿效果",
+   "max_level": 6,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "require-full-charge": "True",
+    "chance": "3*level",
+    "duration": "40*level",
+    "amplifier": "0.5+level/2"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "farmhand",
+   "name": "Farmhand",
+   "display_name": "耕作",
+   "description": "一次可对一大批区域进行耕地操作",
+   "max_level": 2,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "§6",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "hoes"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "disable-on-sneak": "True",
+    "permission-check": "True",
+    "range": "1+level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "fetching",
+   "name": "Fetching",
+   "display_name": "灵犀",
+   "description": "使宠物狼击杀生物的掉落直接进入背包",
+   "max_level": 1,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "§7",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "avaliable-on-players": "True"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "finality",
+   "name": "Finality",
+   "display_name": "宣读",
+   "description": "对低血量生物造成伤害时有概率直接将其击杀",
+   "max_level": 3,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow",
+    "swords",
+    "trident"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "min-health": "0.1*level*maxBlood",
+    "chance": "3*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "fire_affinity",
+   "name": "FireAffinity",
+   "display_name": "炽热",
+   "description": "对燃烧的生物的伤害提升",
+   "max_level": 6,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "bow",
+    "crossbow"
+   ],
+   "conflicts": [
+    "water_affinity"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.05*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "first_strike",
+   "name": "FirstStrike",
+   "display_name": "首击",
+   "description": "对满血生物的伤害提升",
+   "max_level": 6,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.05*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "flinch",
+   "name": "Flinch",
+   "display_name": "聚焦",
+   "description": "抵挡伤害时有概率使攻击者获得失明效果",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "shield"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "3*level",
+    "duration": "40*level",
+    "amplifier": "level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "force",
+   "name": "Force",
+   "display_name": "魄力",
+   "description": "射出的箭矢伤害提升",
+   "max_level": 3,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "§6",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow"
+   ],
+   "conflicts": [
+    "power",
+    "slaughter"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.1*level",
+    "disable-on-players": "False"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "forcefield",
+   "name": "Forcefield",
+   "display_name": "力场",
+   "description": "对附近的怪物造成持续伤害，盔甲会自动扣除耐久",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets",
+    "chestplates",
+    "leggings",
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "range": "3*level",
+    "damage": "2*level",
+    "repeat-ticks": "20"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "freerunner",
+   "name": "Freerunner",
+   "display_name": "轻盈",
+   "description": "受到摔落伤害时有概率免疫",
+   "max_level": 4,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "25*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "frenzy",
+   "name": "Frenzy",
+   "display_name": "激励",
+   "description": "击杀生物后获得力量效果",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "duration": "40*level",
+    "amplifier": "level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "frozen",
+   "name": "Frozen",
+   "display_name": "寒气",
+   "description": "受到伤害时有概率使攻击者获得减速效果",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets",
+    "chestplates",
+    "leggings",
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "3*level",
+    "duration": "20*level",
+    "amplifier": "level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "fury",
+   "name": "Fury",
+   "display_name": "规劝",
+   "description": "在攻击时有概率号召附近的怪物攻击对手",
+   "max_level": 5,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "only_player": "True",
+    "chance": "10*level",
+    "range": "2*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "goliath",
+   "name": "Goliath",
+   "display_name": "坚定",
+   "description": "对比自己血量高的生物造成的伤害提升",
+   "max_level": 6,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.05*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "graceful",
+   "name": "Graceful",
+   "display_name": "乘云",
+   "description": "从高处下落着陆前有概率获得缓降效果",
+   "max_level": 4,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "25*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "grapple",
+   "name": "Grapple",
+   "display_name": "迫近",
+   "description": "在攻击时将对手拉近",
+   "max_level": 4,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes"
+   ],
+   "conflicts": [
+    "knockback",
+    "tornado",
+    "annihilate"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "velocity": "0.5*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "green_thumb",
+   "name": "GreenThumb",
+   "display_name": "培植",
+   "description": "左击泥土可将其转换为草方块",
+   "max_level": 1,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "§7",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "hoes"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "permission-check": "True"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "grit",
+   "name": "Grit",
+   "display_name": "振荡",
+   "description": "受到伤害时损耗对手武器的耐久",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets",
+    "chestplates",
+    "leggings",
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "3*level",
+    "durability-decrease": "level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "hard_to_cure",
+   "name": "HardToCure",
+   "display_name": "不治",
+   "description": "在攻击时有概率使对手持续流血",
+   "max_level": 6,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "§6",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "axes"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "require-full-charge": "True",
+    "chance": "3*level",
+    "damage": "0.5*level",
+    "duration": "20*level",
+    "repeat-ticks": "20"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "harpoon",
+   "name": "Harpoon",
+   "display_name": "尖钩",
+   "description": "对被钩上的生物造成大量伤害",
+   "max_level": 2,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "§6",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "rod"
+   ],
+   "conflicts": [
+    "spiked"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage": "4*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "healing_close_combat",
+   "name": "HealingCloseCombat",
+   "display_name": "回春",
+   "description": "使得被攻击的血量降低的玩家血量恢复",
+   "max_level": 3,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "§6",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "heal": "level*2",
+    "require-full-charge": "True"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "healing_ranged_combat",
+   "name": "HealingRangedCombat",
+   "display_name": "妙手",
+   "description": "使得被射中/抛掷中的血量降低的玩家血量恢复",
+   "max_level": 3,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "§6",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow",
+    "crossbow",
+    "trident"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "heal": "level*3",
+    "require-full-charge": "True"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "hellish",
+   "name": "Hellish",
+   "display_name": "浴火",
+   "description": "在地狱的造成的伤害提升",
+   "max_level": 5,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "trident",
+    "swords",
+    "bow",
+    "crossbow"
+   ],
+   "conflicts": [
+    "void_affinity",
+    "end_infusion"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.08*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "hook",
+   "name": "Hook",
+   "display_name": "牵引",
+   "description": "使钩子的拉扯效果提升",
+   "max_level": 4,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "rod"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "velocity": "0.5"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "horde",
+   "name": "Horde",
+   "display_name": "战狂",
+   "description": "周围生物越多，造成的伤害越高",
+   "max_level": 4,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.015*level*amount",
+    "range": "2.5*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "hot_attack",
+   "name": "HotAttack",
+   "display_name": "烈火",
+   "description": "在温度较高的生物群系伤害较高",
+   "max_level": 3,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.15*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "ice_shot",
+   "name": "IceShot",
+   "display_name": "冻结",
+   "description": "射出的箭矢有概率使对手获得缓慢效果",
+   "max_level": 3,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow",
+    "crossbow"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "3*level",
+    "duration": "60*level",
+    "amplifier": "level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "icy_attack",
+   "name": "IcyAttack",
+   "display_name": "冰霜",
+   "description": "在温度较低的生物群系伤害较高",
+   "max_level": 3,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.15*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "identify",
+   "name": "Identify",
+   "display_name": "成像",
+   "description": "受到伤害时有概率使攻击者获得发光效果",
+   "max_level": 4,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "shield"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "25*level",
+    "duration": "50*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "ignite",
+   "name": "Ignite",
+   "display_name": "殃及",
+   "description": "射出的箭矢有概率点燃落点区域",
+   "max_level": 4,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "§7",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow",
+    "crossbow"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "25*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "illusion_aspect",
+   "name": "IllusionAspect",
+   "display_name": "致幻",
+   "description": "在攻击时有概率使对手获得反胃+失明效果",
+   "max_level": 3,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "3*level",
+    "duration": "120*level",
+    "amplifier": "level",
+    "require-full-charge": "True"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "impact",
+   "name": "Impact",
+   "display_name": "过载",
+   "description": "在攻击时有概率造成大量伤害",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "trident"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "3*level",
+    "damage-multiplier": "1+0.33*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "incandescence",
+   "name": "Incandescence",
+   "display_name": "白热",
+   "description": "受到攻击时有概率使攻击者着火",
+   "max_level": 3,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets",
+    "chestplates",
+    "leggings",
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "10*level",
+    "duration": "60*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "indestructibility",
+   "name": "Indestructibility",
+   "display_name": "重铸",
+   "description": "其物品耐久得到大幅度提升",
+   "max_level": 3,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "§6",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "all"
+   ],
+   "conflicts": [
+    "unbreaking"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "20*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "infernal_touch",
+   "name": "InfernalTouch",
+   "display_name": "熔炼",
+   "description": "自动烧炼挖掘掉落的矿物",
+   "max_level": 1,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "pickaxes"
+   ],
+   "conflicts": [
+    "silk_touch",
+    "stone_switcher"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "drop-xp": "True"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "inferno",
+   "name": "Inferno",
+   "display_name": "炽戟",
+   "description": "使投掷的三叉戟伴随火焰",
+   "max_level": 1,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "trident"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "duration": "100"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "infuriate",
+   "name": "Infuriate",
+   "display_name": "指挥",
+   "description": "在受到攻击时有概率号召附近的怪物攻击对手",
+   "max_level": 5,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "shield"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "10*level",
+    "range": "2*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "injure",
+   "name": "Injure",
+   "display_name": "重伤",
+   "description": "使得被攻击的玩家血量恢复速度降低",
+   "max_level": 3,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "§6",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes",
+    "bow",
+    "crossbow",
+    "trident"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "heal-multiplier": "1-0.25*level",
+    "duration": "80+20*level",
+    "require-full-charge": "True"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "instability",
+   "name": "Instability",
+   "display_name": "爆裂",
+   "description": "射出的箭矢在落点产生爆炸冲击波",
+   "max_level": 2,
+   "rarity_key": "unknown",
+   "rarity": "稀世",
+   "rarity_color": "§e",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow",
+    "crossbow"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "cause-fire": "False",
+    "break-blocks": "False",
+    "power": "level*0.5"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "introversion",
+   "name": "Introversion",
+   "display_name": "偏激",
+   "description": "对玩家造成的伤害提升",
+   "max_level": 3,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes"
+   ],
+   "conflicts": [
+    "sharpness",
+    "bane_of_arthropods",
+    "smite",
+    "defusion",
+    "razor",
+    "ender_slayer"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.1*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "invigoration",
+   "name": "Invigoration",
+   "display_name": "破釜",
+   "description": "在低血量时造成的伤害提升并受到的伤害降低",
+   "max_level": 3,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets",
+    "chestplates",
+    "leggings",
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "min-health": "0.1*level*maxBlood",
+    "del-damage-multiplier": "1-0.2*level",
+    "add-damage-multiplier": "1+0.2*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "kinetic",
+   "name": "Kinetic",
+   "display_name": "制动",
+   "description": "受到碰撞的伤害降低",
+   "max_level": 3,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "elytra"
+   ],
+   "conflicts": [
+    "launch"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1-0.25*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "launch",
+   "name": "Launch",
+   "display_name": "能源",
+   "description": "在使用烟花火箭加速时获得的加速度提升",
+   "max_level": 4,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "elytra"
+   ],
+   "conflicts": [
+    "kinetic"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "velocity": "1+0.15*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "lesion",
+   "name": "Lesion",
+   "display_name": "膏肓",
+   "description": "在攻击时有概率使对手持续流血",
+   "max_level": 6,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "§6",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "require-full-charge": "True",
+    "chance": "3*level",
+    "damage": "0.5*level",
+    "duration": "20*level",
+    "repeat-ticks": "20"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "levitate",
+   "name": "Levitate",
+   "display_name": "失重",
+   "description": "在攻击时有概率使对手获得漂浮效果",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow",
+    "crossbow"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "3*level",
+    "duration": "20*level",
+    "amplifier": "level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "lucky_catch",
+   "name": "LuckyCatch",
+   "display_name": "惊喜",
+   "description": "在收钩时有概率一钩双鱼",
+   "max_level": 2,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "§6",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "rod"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "25*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "lumberjack",
+   "name": "Lumberjack",
+   "display_name": "电锯",
+   "description": "一次性砍伐大量木头",
+   "max_level": 4,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "axes"
+   ],
+   "conflicts": [
+    "drill"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "disable-on-sneak": "True",
+    "amount": "3*level",
+    "targets": "oak_wood,dark_oak_wood,acacia_wood,jungle_wood,birch_wood,crimson_stem,spruce_wood,warped_stem,oak_log,dark_oak_log,acacia_log,jungle_log,birch_log,spruce_log,crimson_stem,warped_stem"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "magnetic",
+   "name": "Magnetic",
+   "display_name": "磁铁",
+   "description": "自动吸引周围的物品和经验到背包",
+   "max_level": 4,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "range": "level*2.5",
+    "repeat-ticks": "5",
+    "disable-on-sneak": "True",
+    "only-on-sneak": "False",
+    "softmode": "False"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "marking",
+   "name": "Marking",
+   "display_name": "乘势",
+   "description": "短时间内连续对你的对手的伤害提升",
+   "max_level": 3,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow",
+    "crossbow"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "duration": "40*level",
+    "damage-multiplier": "1+0.1*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "marksman",
+   "name": "Marksman",
+   "display_name": "定力",
+   "description": "射出的箭矢在一定时间内无视重力",
+   "max_level": 3,
+   "rarity_key": "unknown",
+   "rarity": "稀世",
+   "rarity_color": "§e",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow",
+    "crossbow"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "duration": "40*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "necrotic",
+   "name": "Necrotic",
+   "display_name": "收割",
+   "description": "击杀凋零骷髅时掉落头颅的概率提升",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [
+    "looting"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "3*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "nocturnal",
+   "name": "Nocturnal",
+   "display_name": "夜伏",
+   "description": "在夜晚时造成的伤害提升",
+   "max_level": 4,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [
+    "diurnal"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.05*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "optics",
+   "name": "Optics",
+   "display_name": "狙击",
+   "description": "射出的箭矢经过距离越远伤害越高",
+   "max_level": 4,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow",
+    "crossbow"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.0025*level*dist"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "oxygenate",
+   "name": "Oxygenate",
+   "display_name": "富氧",
+   "description": "在水中破坏方块时可以获得额外氧气",
+   "max_level": 4,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "§7",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "pickaxes",
+    "axes",
+    "shovels",
+    "hoes"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "oxygen": "level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "paladin",
+   "name": "Paladin",
+   "display_name": "骑士",
+   "description": "在骑乘时造成的伤害提升",
+   "max_level": 3,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.2*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "paralyze",
+   "name": "Paralyze",
+   "display_name": "麻痹",
+   "description": "抵挡伤害时有概率使攻击者获得挖掘疲劳效果",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "shield"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "3*level",
+    "duration": "20*level",
+    "amplifier": "level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "parry",
+   "name": "Parry",
+   "display_name": "格挡",
+   "description": "手持剑时受到的伤害降低",
+   "max_level": 3,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1-0.1*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "pentashot",
+   "name": "Pentashot",
+   "display_name": "五言",
+   "description": "一次射出的箭矢数量增加为五支并分散为扇形",
+   "max_level": 1,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow"
+   ],
+   "conflicts": [
+    "succession",
+    "tripleshot",
+    "buckshot"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "angle": "7",
+    "chance": "100*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "phantasm",
+   "name": "Phantasm",
+   "display_name": "圣水",
+   "description": "对亡灵生物的伤害提升",
+   "max_level": 4,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "§7",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "trident",
+    "bow"
+   ],
+   "conflicts": [
+    "serrated",
+    "arachnid",
+    "impaling",
+    "power",
+    "force",
+    "slaughter"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.5*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "plasmic",
+   "name": "Plasmic",
+   "display_name": "原生",
+   "description": "对穿着钻石和下界合金装备的目标的伤害提升",
+   "max_level": 5,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [
+    "voltage"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.02*level*amount"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "preservation",
+   "name": "Preservation",
+   "display_name": "捍卫",
+   "description": "受到的伤害大幅降低",
+   "max_level": 4,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "§6",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets",
+    "chestplates",
+    "leggings",
+    "boots"
+   ],
+   "conflicts": [
+    "protection",
+    "fire_protection",
+    "projectile_protection",
+    "blast_protection"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1-0.04*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "probation",
+   "name": "Probation",
+   "display_name": "感化",
+   "description": "受到攻击时有概率给感化攻击者，使其漂浮起来",
+   "max_level": 3,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets",
+    "chestplates",
+    "leggings",
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "4*level",
+    "duration": "40*level",
+    "amplifier": "level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "proximity",
+   "name": "Proximity",
+   "display_name": "压迫",
+   "description": "在触发范围内，与对手的距离越近伤害越高",
+   "max_level": 4,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "max-distance": "2.5",
+    "damage-multiplier": "1+0.2*level/(dist+1.0)"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "puncture",
+   "name": "Puncture",
+   "display_name": "破甲",
+   "description": "对壳类生物的伤害提升",
+   "max_level": 4,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "§7",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "trident"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.5*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "radiance",
+   "name": "Radiance",
+   "display_name": "光辉",
+   "description": "射出的箭矢落地附近的生物发光",
+   "max_level": 4,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow",
+    "crossbow"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "range": "1.25*level",
+    "duration": "30*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "rage",
+   "name": "Rage",
+   "display_name": "煽动",
+   "description": "射出的箭矢造成伤害时有概率号召附近的怪物攻击对手",
+   "max_level": 5,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "only_player": "True",
+    "chance": "10*level",
+    "range": "2*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "rapid",
+   "name": "Rapid",
+   "display_name": "随风",
+   "description": "射出的箭矢飞行速度提升",
+   "max_level": 8,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "velocity": "1+0.0625*level",
+    "delay": "False",
+    "direct": "False"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "razor",
+   "name": "Razor",
+   "display_name": "利刃",
+   "description": "在攻击时伤害大幅提升",
+   "max_level": 4,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "§6",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [
+    "sharpness",
+    "smite",
+    "bane_of_arthropods",
+    "defusion",
+    "ender_slayer",
+    "introversion"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.1*level",
+    "decrease-if-cooldown": "True",
+    "disable-on-players": "False"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "rebounding",
+   "name": "Rebounding",
+   "display_name": "反弹",
+   "description": "在受到伤害时对攻击者施加击退效果",
+   "max_level": 4,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets",
+    "chestplates",
+    "leggings",
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "velocity": "0.5*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "reel",
+   "name": "Reel",
+   "display_name": "拉扯",
+   "description": "拉扯生物的力度提升",
+   "max_level": 4,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "rod"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "velocity": "0.5*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "reinforcement",
+   "name": "Reinforcement",
+   "display_name": "硬化",
+   "description": "受到的伤害降低",
+   "max_level": 4,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "elytra"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1-0.05*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "rejuvenation",
+   "name": "Rejuvenation",
+   "display_name": "自愈",
+   "description": "自然回血速度与回血量提升",
+   "max_level": 2,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets",
+    "chestplates",
+    "leggings",
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "heal-multiplier": "1+0.25*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "repairing",
+   "name": "Repairing",
+   "display_name": "自生",
+   "description": "处于非手持状态时耐久度持续增加",
+   "max_level": 3,
+   "rarity_key": "unknown",
+   "rarity": "稀世",
+   "rarity_color": "§e",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "all"
+   ],
+   "conflicts": [
+    "decay_curse"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "repeat-ticks": "100",
+    "durability-increase": "level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "replenish",
+   "name": "Replenish",
+   "display_name": "催生",
+   "description": "在采集农作物时自动补种",
+   "max_level": 1,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "§6",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "hoes"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "disable-on-sneak": "True",
+    "blacklist": "GLOW_BERRIES,BERRIES"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "respirator",
+   "name": "Respirator",
+   "display_name": "过滤",
+   "description": "受到龙息的伤害大幅降低",
+   "max_level": 4,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1-0.25*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "sating",
+   "name": "Sating",
+   "display_name": "节食",
+   "description": "饱食损失速度降低",
+   "max_level": 4,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "12.5*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "serious_disease",
+   "name": "SeriousDisease",
+   "display_name": "痼疾",
+   "description": "射出的箭矢有概率使对手持续流血",
+   "max_level": 6,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "§6",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow",
+    "crossbow"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "require-full-charge": "True",
+    "chance": "3*level",
+    "damage": "0.5*level",
+    "duration": "20*level",
+    "repeat-ticks": "20"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "serrated",
+   "name": "Serrated",
+   "display_name": "锯齿",
+   "description": "三叉戟造成的伤害提升",
+   "max_level": 3,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "§6",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "trident"
+   ],
+   "conflicts": [
+    "phantasm",
+    "arachnid",
+    "impaling"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.1*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "severe_illness",
+   "name": "SevereIllness",
+   "display_name": "沉疴",
+   "description": "抛出的三叉戟有概率使对手持续流血",
+   "max_level": 6,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "§6",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "trident"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "require-full-charge": "True",
+    "chance": "3*level",
+    "damage": "0.5*level",
+    "duration": "20*level",
+    "repeat-ticks": "20"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "shadowless",
+   "name": "Shadowless",
+   "display_name": "无影",
+   "description": "击杀将会获得隐身效果",
+   "max_level": 3,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes",
+    "bow",
+    "crossbow",
+    "trident"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "duration": "40*level",
+    "amplifier": "level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "shields",
+   "name": "Shields",
+   "display_name": "护盾",
+   "description": "长时间不受伤害下一次可以减伤",
+   "max_level": 8,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets",
+    "chestplates",
+    "leggings",
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1-level*0.1",
+    "duration": "160-10*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "shockwave",
+   "name": "Shockwave",
+   "display_name": "共振",
+   "description": "射出的箭矢飞行时伤害轨迹附近的生物",
+   "max_level": 4,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-splash": "level",
+    "range": "0.5*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "shot_assist",
+   "name": "ShotAssist",
+   "display_name": "校准",
+   "description": "射出的箭矢造成的伤害更高",
+   "max_level": 4,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets",
+    "chestplates",
+    "leggings",
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.015*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "sickening",
+   "name": "Sickening",
+   "display_name": "毒箭",
+   "description": "射出的箭矢有概率使对手获得中毒效果",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow",
+    "crossbow"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "3*level",
+    "duration": "100*level",
+    "amplifier": "1"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "silence",
+   "name": "Silence",
+   "display_name": "沉默",
+   "description": "受到攻击时有概率使对手在一段时间内无法使用主动技能类附魔",
+   "max_level": 3,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets",
+    "chestplates",
+    "leggings",
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "15*level",
+    "duration": "level*100"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "slaughter",
+   "name": "Slaughter",
+   "display_name": "屠宰",
+   "description": "对和平生物的伤害提升",
+   "max_level": 4,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "§7",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow",
+    "trident",
+    "swords",
+    "axes"
+   ],
+   "conflicts": [
+    "power",
+    "force",
+    "serrated",
+    "phantasm",
+    "arachnid",
+    "impaling",
+    "sharpness",
+    "bane_of_arthropods",
+    "smite",
+    "defusion",
+    "razor",
+    "ender_slayer"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.5*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "slicing",
+   "name": "Slicing",
+   "display_name": "刀鞘",
+   "description": "飞行时每秒对周围生物造成一定伤害",
+   "max_level": 4,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "elytra"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-splash": "level",
+    "range": "0.5*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "spearfishing",
+   "name": "Spearfishing",
+   "display_name": "鱼叉",
+   "description": "击中水中的方块时有概率掉落鲜鱼",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "trident"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "3*level",
+    "drops": "cod,salmon,pufferfish,tropical_fish"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "spiked",
+   "name": "Spiked",
+   "display_name": "扎刺",
+   "description": "对被钩上的生物造成伤害",
+   "max_level": 2,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "rod"
+   ],
+   "conflicts": [
+    "harpoon"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage": "level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "splash",
+   "name": "Splash",
+   "display_name": "水花",
+   "description": "在落地处造成溅射伤害",
+   "max_level": 4,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "trident"
+   ],
+   "conflicts": [
+    "wisdom"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "range": "level",
+    "damage-splash": "level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "spring",
+   "name": "Spring",
+   "display_name": "飘逸",
+   "description": "跳跃距离和高度提升",
+   "max_level": 3,
+   "rarity_key": "unknown",
+   "rarity": "稀世",
+   "rarity_color": "§e",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "velocity-y": "0.5",
+    "velocity-xz": "0.5"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "stab",
+   "name": "Stab",
+   "display_name": "尖锐",
+   "description": "三叉戟的近战伤害提升",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "trident"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.1*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "stalwart",
+   "name": "Stalwart",
+   "display_name": "信念",
+   "description": "受到伤害时有概率获得抗性提升效果",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets",
+    "chestplates",
+    "leggings",
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "3*level",
+    "duration": "10*level",
+    "amplifier": "0.5+level/2"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "stamina",
+   "name": "Stamina",
+   "display_name": "耐性",
+   "description": "奔跑时饱食损失降低",
+   "max_level": 4,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "12.5*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "stone_switcher",
+   "name": "StoneSwitcher",
+   "display_name": "筛选",
+   "description": "挖掘石头时有概率掉落其他种类的岩石",
+   "max_level": 4,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "§7",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "pickaxes"
+   ],
+   "conflicts": [
+    "transfuse",
+    "silk_touch"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "drops": "andesite,granite,diorite",
+    "chance": "12.5*level",
+    "targets": "stone,deepslate"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "stray_aspect",
+   "name": "StrayAspect",
+   "display_name": "雪霜",
+   "description": "在攻击时有概率使对手获得缓慢效果",
+   "max_level": 3,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "require-full-charge": "True",
+    "chance": "3*level",
+    "duration": "20*level",
+    "amplifier": "level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "streamlining",
+   "name": "Streamlining",
+   "display_name": "时速",
+   "description": "移动速度提升",
+   "max_level": 3,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "§6",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "speed": "0.02*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "succession",
+   "name": "Succession",
+   "display_name": "迭累",
+   "description": "一瞬间同时射出多支箭",
+   "max_level": 2,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow"
+   ],
+   "conflicts": [
+    "tripleshot",
+    "pentashot",
+    "buckshot"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "amount": "level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "supercritical",
+   "name": "Supercritical",
+   "display_name": "会心",
+   "description": "在攻击时有概率造成的伤害大幅提升",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.33*level",
+    "require-full-charge": "True",
+    "chance": "3*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "swallow",
+   "name": "Swallow",
+   "display_name": "吞噬",
+   "description": "击杀敌人时回复饱食度",
+   "max_level": 3,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes",
+    "bow",
+    "crossbow",
+    "trident"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "food": "level*4"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "sycophant",
+   "name": "Sycophant",
+   "display_name": "守恒",
+   "description": "转换一部分抵挡的伤害为治疗血量并使盾牌进入冷却期",
+   "max_level": 4,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "shield"
+   ],
+   "conflicts": [
+    "deflection"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "percent": "5*level",
+    "cooldown": "8-level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "tectonic",
+   "name": "Tectonic",
+   "display_name": "余震",
+   "description": "受到摔落伤害时对周围的生物造成伤害",
+   "max_level": 2,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "boots"
+   ],
+   "conflicts": [
+    "feather_falling"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "range": "2*level",
+    "damage-splash": "2*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "telekinesis",
+   "name": "Telekinesis",
+   "display_name": "吸星",
+   "description": "使掉落物和经验直接进入背包",
+   "max_level": 1,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "pickaxes",
+    "axes",
+    "shovels",
+    "hoes",
+    "swords",
+    "bow",
+    "crossbow"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "disable-on-players": "True",
+    "check-radius": "2",
+    "check-delay": "1"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "thrive",
+   "name": "Thrive",
+   "display_name": "旺盛",
+   "description": "最大生命值提升",
+   "max_level": 2,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "§6",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets",
+    "chestplates",
+    "leggings",
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "max-health-increase": "2*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "tornado",
+   "name": "Tornado",
+   "display_name": "击飞",
+   "description": "在攻击时将对手击向空中",
+   "max_level": 4,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes"
+   ],
+   "conflicts": [
+    "knockback",
+    "grapple",
+    "annihilate"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "velocity": "0.25*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "towering",
+   "name": "Towering",
+   "display_name": "屹立",
+   "description": "在血量较高时受到伤害增加，在血量较低时受到伤害减少",
+   "max_level": 4,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "helmets",
+    "chestplates",
+    "leggings",
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "health-judging-line": "(0.4+0.05*level)*maxBlood",
+    "high-damage-multiplier": "1+0.0375*level",
+    "low-damage-multiplier": "1-0.075*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "toxic",
+   "name": "Toxic",
+   "display_name": "毒刃",
+   "description": "在攻击时有概率使对手获得中毒效果",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "3*level",
+    "require-full-charge": "True",
+    "duration": "100*level",
+    "amplifier": "1"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "transfuse",
+   "name": "Transfuse",
+   "display_name": "洗炼",
+   "description": "在挖掘石头时有概率掉落随机矿物",
+   "max_level": 3,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "pickaxes"
+   ],
+   "conflicts": [
+    "stone_switcher",
+    "silk_touch"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "drops": "diamond_ore,gold_ore,lapis_ore,redstone_ore,iron_ore",
+    "chance": "0.5*level",
+    "targets": "stone,deepslate"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "tripleshot",
+   "name": "Tripleshot",
+   "display_name": "三言",
+   "description": "一次射出的箭矢数量增加为三支并分散为扇形",
+   "max_level": 1,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow"
+   ],
+   "conflicts": [
+    "succession",
+    "pentashot",
+    "buckshot"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "angle": "10",
+    "chance": "100"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "vein",
+   "name": "Vein",
+   "display_name": "脉络",
+   "description": "在挖掘矿物时连锁破坏其周围的同种矿物",
+   "max_level": 4,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "pickaxes"
+   ],
+   "conflicts": [
+    "drill",
+    "blast_mining"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "disable-on-sneak": "True",
+    "amount": "2*level",
+    "targets": "deepslate_coal_ore,deepslate_iron_ore,deepslate_gold_ore,deepslate_diamond_ore,deepslate_emerald_ore,deepslate_redstone_ore,deepslate_lapis_ore,copper_ore,deepslate_copper_ore,coal_ore,iron_ore,gold_ore,ancient_debris,lapis_ore,diamond_ore,emerald_ore,redstone_ore,nether_quartz_ore,gilded_blackstone,nether_gold_ore,glowstone"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "venom",
+   "name": "Venom",
+   "display_name": "恶意",
+   "description": "在攻击时有概率使对手获得凋零效果",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow",
+    "crossbow",
+    "swords"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "3*level",
+    "duration": "60*level",
+    "amplifier": "1"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "void_affinity",
+   "name": "VoidAffinity",
+   "display_name": "仲裁",
+   "description": "在末地造成的伤害提升",
+   "max_level": 5,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "trident"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.08*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "volatile",
+   "name": "Volatile",
+   "display_name": "引爆",
+   "description": "在攻击时有概率释放爆炸冲击波",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "cause-fire": "False",
+    "break-blocks": "False",
+    "require-full-charge": "True",
+    "chance": "3*level",
+    "power": "0.5*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "voltage",
+   "name": "Voltage",
+   "display_name": "导电",
+   "description": "对穿着铁、金装备的目标的伤害提升",
+   "max_level": 5,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [
+    "plasmic"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.02*level*amount"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "water_affinity",
+   "name": "WaterAffinity",
+   "display_name": "湍流",
+   "description": "在水中造成的伤害提升",
+   "max_level": 3,
+   "rarity_key": "uncommon",
+   "rarity": "罕见",
+   "rarity_color": "§a",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "trident"
+   ],
+   "conflicts": [
+    "fire_affinity"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.1*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "water_aspect",
+   "name": "WaterAspect",
+   "display_name": "抽薪",
+   "description": "对火焰类生物的伤害提升",
+   "max_level": 4,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "§7",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes"
+   ],
+   "conflicts": [
+    "fire_aspect"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "damage-multiplier": "1+0.5*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "weakening",
+   "name": "Weakening",
+   "display_name": "连击",
+   "description": "短时间内连续对你的对手的伤害提升",
+   "max_level": 3,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "duration": "20*level",
+    "damage-multiplier": "1+0.1*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "wisdom",
+   "name": "Wisdom",
+   "display_name": "智识",
+   "description": "掉落的经验量提升",
+   "max_level": 2,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes",
+    "pickaxes",
+    "shovels",
+    "hoes",
+    "bow",
+    "crossbow",
+    "trident"
+   ],
+   "conflicts": [
+    "splash"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "exp-multiplier": "1+0.1*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "wood_switcher",
+   "name": "WoodSwitcher",
+   "display_name": "异生",
+   "description": "砍伐木头时有概率掉落其他种类的木头",
+   "max_level": 4,
+   "rarity_key": "common",
+   "rarity": "普通",
+   "rarity_color": "§7",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "axes"
+   ],
+   "conflicts": [
+    "silk_touch"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "drops": "oak_log,birch_log,spruce_log,jungle_log,acacia_log,dark_oak_log",
+    "chance": "12.5*level",
+    "targets": "oak_log,birch_log,spruce_log,jungle_log,acacia_log,dark_oak_log"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "simple",
+   "id": "zeus",
+   "name": "Zeus",
+   "display_name": "宙斯",
+   "description": "攻击时有概率召唤闪电攻击对手",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "bow",
+    "crossbow",
+    "swords"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "3*level",
+    "damage": "2+level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "skill",
+   "id": "ascend",
+   "name": "Ascend",
+   "display_name": "腾空",
+   "description": "§e右击§7将自己向上弹射（冷却时间: §a90秒§7）",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "sound": "ENTITY_FIREWORK_ROCKET_LARGE_BLAST",
+    "cooldown": "90",
+    "particle": "{\"type\": \"SLIME\", \"amount\": 5}",
+    "power": "25"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "skill",
+   "id": "catnap",
+   "name": "Catnap",
+   "display_name": "假寐",
+   "description": "§e右击§7蛊惑范围内最近的玩家，使其失明（冷却时间: §a600秒§7）",
+   "max_level": 3,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "§6",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes",
+    "bow",
+    "crossbow",
+    "trident"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "sound": "ENTITY_ENDERMAN_TELEPORT",
+    "cooldown": "360",
+    "particle": "{\"type\": \"CRIT\", \"amount\": 2}",
+    "duration": "200+level*20",
+    "range": "4+2*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "skill",
+   "id": "charge",
+   "name": "Charge",
+   "display_name": "突袭",
+   "description": "§e右击§7将自己弹射至所指方向（冷却时间: §a40秒§7）",
+   "max_level": 6,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "sound": "ENTITY_FIREWORK_ROCKET_LAUNCH",
+    "cooldown": "40",
+    "particle": "{\"type\": \"SWEEP_ATTACK\", \"amount\": 2}",
+    "power": "0.8*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "skill",
+   "id": "dynamite",
+   "name": "Dynamite",
+   "display_name": "爆破",
+   "description": "§e右击§7可大范围破坏方块（冷却时间: §a360秒§7）",
+   "max_level": 2,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "pickaxes"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "sound": "ENTITY_DRAGON_FIREBALL_EXPLODE",
+    "cooldown": "360",
+    "tick-per": "16",
+    "particle": "{\"type\": \"EXPLOSION_HUGE\", \"amount\": 1}",
+    "permission-check": "True",
+    "hardness-check": "bedrock,obisidian",
+    "range": "1+level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "skill",
+   "id": "flash_back",
+   "name": "FlashBack",
+   "display_name": "回溯",
+   "description": "§e右击§7在原地记录状态，一段时间后闪回到该位置与状态（冷却时间: §a360秒§7）",
+   "max_level": 3,
+   "rarity_key": "unknown",
+   "rarity": "稀世",
+   "rarity_color": "§e",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes",
+    "bow",
+    "crossbow",
+    "trident"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "sound": "ENTITY_ENDERMAN_TELEPORT",
+    "cooldown": "360",
+    "particle": "{\"type\": \"CRIT\", \"amount\": 2}",
+    "duration": "200-level*20"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "skill",
+   "id": "irrigate",
+   "name": "Irrigate",
+   "display_name": "浇灌",
+   "description": "§e右击§7使得目标可生长方块立刻生长（冷却时间: §a240秒§7）",
+   "max_level": 3,
+   "rarity_key": "rare",
+   "rarity": "精良",
+   "rarity_color": "§b",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "hoes"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "sound": "ENTITY_ENDERMAN_TELEPORT",
+    "cooldown": "240",
+    "particle": "{\"type\": \"VILLAGER_HAPPY\", \"amount\": 2}",
+    "duration": "200-level*20"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "skill",
+   "id": "missile",
+   "name": "Missile",
+   "display_name": "咒怨",
+   "description": "§e右击§7发射一颗凋零骷髅头（冷却时间: §a60秒§7）",
+   "max_level": 3,
+   "rarity_key": "unknown",
+   "rarity": "稀世",
+   "rarity_color": "§e",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "sound": "ENTITY_WITHER_SHOOT",
+    "cooldown": "60",
+    "particle": "{\"type\": \"VILLAGER_ANGRY\", \"amount\": 1}",
+    "velocity": "1.5+0.5*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "skill",
+   "id": "quake",
+   "name": "Quake",
+   "display_name": "触怒",
+   "description": "§e右击§7对周边生物造成范围真实伤害（冷却时间: §a40秒§7）",
+   "max_level": 3,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "sound": "ENTITY_ENDER_DRAGON_GROWL",
+    "cooldown": "40",
+    "particle": "{\"type\": \"CRIT_MAGIC\", \"amount\": 2}",
+    "damage": "3+level*2",
+    "range": "2+level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "skill",
+   "id": "self_realization",
+   "name": "SelfRealization",
+   "display_name": "自我",
+   "description": "§e右击§7消除所有DEBUFF（冷却时间: §a600秒§7）",
+   "max_level": 1,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes",
+    "bow",
+    "crossbow",
+    "trident"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "sound": "ENTITY_ENDERMAN_TELEPORT",
+    "cooldown": "360",
+    "particle": "{\"type\": \"END_ROD\", \"amount\": 2}"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "skill",
+   "id": "stand_and_fight",
+   "name": "StandAndFight",
+   "display_name": "背水",
+   "description": "§e右击§7扣除一半当前血量，并获得速度与力量效果（冷却时间: §a360秒§7）",
+   "max_level": 5,
+   "rarity_key": "epic",
+   "rarity": "史诗",
+   "rarity_color": "§d",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes",
+    "bow",
+    "crossbow",
+    "trident"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "sound": "ENTITY_ENDERMAN_TELEPORT",
+    "cooldown": "360",
+    "particle": "{\"type\": \"FLAME\", \"amount\": 2}",
+    "duration": "200+level*40",
+    "amplifier": "3"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "skill",
+   "id": "vitalize",
+   "name": "Vitalize",
+   "display_name": "急救",
+   "description": "§e右击§7将自身生命值恢复至满（冷却时间: §a180秒§7）",
+   "max_level": 1,
+   "rarity_key": "legendary",
+   "rarity": "传奇",
+   "rarity_color": "§6",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes",
+    "pickaxes",
+    "shovels"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "sound": "ENTITY_PLAYER_LEVELUP",
+    "cooldown": "180",
+    "particle": "{\"type\": \"HEART\", \"amount\": 1}"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "skill",
+   "id": "xray",
+   "name": "Xray",
+   "display_name": "慧眼",
+   "description": "§e右击§7可高亮周围的矿物（冷却时间: §a360秒§7）",
+   "max_level": 3,
+   "rarity_key": "unknown",
+   "rarity": "稀世",
+   "rarity_color": "§e",
+   "grindstoneable": true,
+   "enabled": true,
+   "targets": [
+    "pickaxes"
+   ],
+   "conflicts": [
+    "blast_mining"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "sound": "ENTITY_ENDERMAN_TELEPORT",
+    "cooldown": "360",
+    "particle": "{\"type\": \"TOTEM\", \"amount\": 2}",
+    "blocks": "{\"BLACK\": [\"COAL_ORE\", \"DEEPSLATE_COAL_ORE\"], \"GRAY\": [\"IRON_ORE\", \"DEEPSLATE_IRON_ORE\"], \"GOLD\": [\"COPPER_ORE\", \"DEEPSLATE_COPPER_ORE\"], \"YELLOW\": [\"GOLD_ORE\", \"NETHER_GOLD_ORE\", \"DEEPSLATE_GOLD_ORE\"], \"RED\": [\"REDSTONE_ORE\", \"DEEPSLATE_REDSTONE_ORE\"], \"BLUE\": [\"LAPIS_ORE\", \"DEEPSLATE_LAPIS_ORE\"], \"DARK_RED\": [\"ANCIENT_DEBRIS\"], \"AQUA\": [\"DIAMOND_ORE\", \"DEEPSLATE_DIAMOND_ORE\"], \"GREEN\": [\"EMERALD_ORE\", \"DEEPSLATE_EMERALD_ORE\"]}",
+    "range": "4+level*2",
+    "duration": "200+level*200",
+    "colored": "True"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "curse",
+   "id": "breaklessness_curse",
+   "name": "BreaklessnessCurse",
+   "display_name": "无力诅咒",
+   "description": "使工具破坏方块时有概率失败",
+   "max_level": 3,
+   "rarity_key": "curse",
+   "rarity": "诅咒",
+   "rarity_color": "§c",
+   "grindstoneable": false,
+   "enabled": true,
+   "targets": [
+    "pickaxes",
+    "axes",
+    "hoes",
+    "shovels"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "15*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "curse",
+   "id": "calling_curse",
+   "name": "CallingCurse",
+   "display_name": "仇恶诅咒",
+   "description": "使装备被穿戴时会激怒周围的怪物",
+   "max_level": 1,
+   "rarity_key": "curse",
+   "rarity": "诅咒",
+   "rarity_color": "§c",
+   "grindstoneable": false,
+   "enabled": true,
+   "targets": [
+    "helmets",
+    "chestplates",
+    "leggings",
+    "boots"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "repeat-ticks": "100",
+    "range": "20"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "curse",
+   "id": "decay_curse",
+   "name": "DecayCurse",
+   "display_name": "腐烂诅咒",
+   "description": "处于非手持状态时耐久度持续降低",
+   "max_level": 3,
+   "rarity_key": "curse",
+   "rarity": "诅咒",
+   "rarity_color": "§c",
+   "grindstoneable": false,
+   "enabled": true,
+   "targets": [
+    "all"
+   ],
+   "conflicts": [
+    "repairing"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "repeat-ticks": "100",
+    "durability-decrease": "level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "curse",
+   "id": "fragility_curse",
+   "name": "FragilityCurse",
+   "display_name": "脆弱诅咒",
+   "description": "使物品被使用时额外扣除耐久度",
+   "max_level": 3,
+   "rarity_key": "curse",
+   "rarity": "诅咒",
+   "rarity_color": "§c",
+   "grindstoneable": false,
+   "enabled": true,
+   "targets": [
+    "all"
+   ],
+   "conflicts": [
+    "unbreaking"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "durability-decrease-extra": "2*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "curse",
+   "id": "harmlessness_curse",
+   "name": "HarmlessnessCurse",
+   "display_name": "软弱诅咒",
+   "description": "使剑或斧的攻击有概率无效",
+   "max_level": 3,
+   "rarity_key": "curse",
+   "rarity": "诅咒",
+   "rarity_color": "§c",
+   "grindstoneable": false,
+   "enabled": true,
+   "targets": [
+    "swords",
+    "axes"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "15*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "curse",
+   "id": "hunger_curse",
+   "name": "HungerCurse",
+   "display_name": "饥饿诅咒",
+   "description": "使佩戴该头盔时饥饿速度加快",
+   "max_level": 1,
+   "rarity_key": "curse",
+   "rarity": "诅咒",
+   "rarity_color": "§c",
+   "grindstoneable": false,
+   "enabled": true,
+   "targets": [
+    "helmets"
+   ],
+   "conflicts": [
+    "sating"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "repeat-ticks": "200"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "curse",
+   "id": "inaccuracy_curse",
+   "name": "InaccuracyCurse",
+   "display_name": "火焰诅咒",
+   "description": "使弓射出的箭将错误地燃烧对象",
+   "max_level": 3,
+   "rarity_key": "curse",
+   "rarity": "诅咒",
+   "rarity_color": "§c",
+   "grindstoneable": false,
+   "enabled": true,
+   "targets": [
+    "bow"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "15*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "curse",
+   "id": "misfortune_curse",
+   "name": "MisfortuneCurse",
+   "display_name": "霉运诅咒",
+   "description": "使工具破坏方块时有概率不掉落",
+   "max_level": 3,
+   "rarity_key": "curse",
+   "rarity": "诅咒",
+   "rarity_color": "§c",
+   "grindstoneable": false,
+   "enabled": true,
+   "targets": [
+    "pickaxes",
+    "axes",
+    "hoes",
+    "shovels"
+   ],
+   "conflicts": [
+    "fortune"
+   ],
+   "needed": [],
+   "permission": "",
+   "params": {
+    "chance": "15*level"
+   }
+  },
+  {
+   "plugin": "nereus",
+   "kind": "curse",
+   "id": "permanence_curse",
+   "name": "PermanenceCurse",
+   "display_name": "烙印诅咒",
+   "description": "使物品在铁砧中无法被修改",
+   "max_level": 1,
+   "rarity_key": "curse",
+   "rarity": "诅咒",
+   "rarity_color": "§c",
+   "grindstoneable": false,
+   "enabled": true,
+   "targets": [
+    "all"
+   ],
+   "conflicts": [],
+   "needed": [],
+   "permission": "",
+   "params": {}
+  }
+ ]
+}
