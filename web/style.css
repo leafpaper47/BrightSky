@@ -96,7 +96,8 @@ select{background:var(--bg2);color:var(--fg);border:1px solid var(--line);border
   width:min(520px,100%);height:100%;min-height:0;overflow:hidden;
   background:var(--bg2);border-left:1px solid var(--line);box-shadow:-18px 0 48px rgba(6,10,16,.22);
   animation:slide .18s ease-out}
-@keyframes slide{from{transform:translateX(18px);opacity:.4}to{transform:none;opacity:1}}
+/* 只做位移入场，不加透明度动画：避免面板半透明时透出后面的卡片 */
+@keyframes slide{from{transform:translateX(18px)}to{transform:none}}
 
 /* 面板顶部固定条：标题 + 关闭，不随内容滚动，也不会盖住正文 */
 .drawer-hd{flex:0 0 auto;display:flex;align-items:center;gap:12px;
@@ -143,3 +144,8 @@ table.kv code{font-size:12px;background:var(--chip);border-radius:5px;padding:1p
 .ft{max-width:var(--maxw);margin:0 auto;padding:10px clamp(14px,2.2vw,28px) 30px;color:var(--fg2);font-size:12px;
   display:flex;gap:8px;flex-wrap:wrap}
 .ft .dot{opacity:.5}
+
+/* 互斥/前置里的附魔名做成可点链接 */
+.kv a.d-link{color:var(--accent);text-decoration:none;border-bottom:1px dashed color-mix(in srgb,var(--accent) 55%,transparent);padding-bottom:1px}
+.kv a.d-link:hover{background:color-mix(in srgb,var(--accent) 12%,transparent);border-bottom-style:solid}
+.kv .d-plain{color:var(--fg)}

@@ -202,6 +202,16 @@
     return `${esc(cn)}<br><code>${esc(k)}</code>`;
   }
 
+  // 互斥/前置里能定位到本页条目的，渲染成可点的链接（点一下直接看那件附魔）
+  function linkList(names, ids, self_id) {
+    return names.map((n, i) => {
+      const id = (ids || [])[i];
+      if (id && id !== self_id && st.data.items.some((x) => x.id === id))
+        return `<a class="d-link" href="?id=${encodeURIComponent(id)}" data-jump="${esc(id)}">${esc(n)}</a>`;
+      return `<span class="d-plain">${esc(n)}</span>`;
+    }).join('、');
+  }
+
   function openDetail(id, push) {
     const it = st.data.items.find((x) => x.id === id);
     if (!it) return;
@@ -222,9 +232,9 @@
       <div class="d-sec"><h4>可附在</h4><div class="d-tg">${(it.tg.length ? it.tg : ['（未标注）']).map((t) => `<span>${esc(t)}</span>`).join('')}</div></div>
       ${params.length ? `<div class="d-sec"><h4>数值参数</h4><table class="kv">${params.map((p) => `<tr><td>${lblCell(p)}</td><td><code>${esc(p.v)}</code></td></tr>`).join('')}</table></div>` : ''}
       ${it.conflicts.length || it.groups.length || it.need.length ? `<div class="d-sec"><h4>冲突与前置</h4><table class="kv">
-        ${it.conflicts.length ? `<tr><td>互斥附魔</td><td>${it.conflicts.map(esc).join('、')}</td></tr>` : ''}
+        ${it.conflicts.length ? `<tr><td>互斥附魔</td><td>${linkList(it.conflicts, it.conflictsId, it.id)}</td></tr>` : ''}
         ${it.groups.length ? `<tr><td>互斥分组</td><td>${it.groups.map(esc).join('、')}</td></tr>` : ''}
-        ${it.need.length ? `<tr><td>需要先有</td><td>${it.need.map(esc).join('、')}</td></tr>` : ''}
+        ${it.need.length ? `<tr><td>需要先有</td><td>${linkList(it.need, it.needId, it.id)}</td></tr>` : ''}
       </table></div>` : ''}
       ${it.listeners.length ? `<div class="d-sec"><h4>触发时机</h4><div class="d-tg">${it.listeners.map((l) => `<span>${esc(l)}</span>`).join('')}</div></div>` : ''}
       <div class="d-sec"><h4>内部 ID</h4>
@@ -245,6 +255,13 @@
     if (cp) cp.addEventListener('click', async () => {
       try { await navigator.clipboard.writeText(it.id); cp.textContent = '已复制'; setTimeout(() => (cp.textContent = '复制'), 1200); }
       catch { cp.textContent = '复制失败'; }
+    });
+
+    box.querySelectorAll('a[data-jump]').forEach((a) => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        openDetail(a.getAttribute('data-jump'));
+      });
     });
   }
 

@@ -239,6 +239,29 @@ def main():
         if ov:
             it["name"] = ov
 
+    # 互斥/前置里写的是附魔 id（如 power、sharpness），统一换成中文显示名；
+    # 原始 id 另存为 *Id，供详情面板做「点名字跳到那件附魔」的链接。
+    by_key = {}
+    for it in items:
+        by_key.setdefault(it["id"], it["name"])
+        if it["en"]:
+            by_key.setdefault(it["en"].lower(), it["name"])
+    rev_key = {}
+    for it in items:                    # 反查：中文显示名 → id（Aiyatsbus 的冲突写的就是中文名）
+        rev_key.setdefault(it["name"], it["id"])
+    for it in items:
+        for f in ("conflicts", "need"):
+            disp, raws = [], []
+            for v in it[f]:
+                cn = by_key.get(v) or by_key.get(v.lower()) or v
+                if cn in disp:          # 两个 id 撞同一个中文名时只留一条
+                    continue
+                rid = v if (v in by_key or v.lower() in by_key) else rev_key.get(cn, "")
+                disp.append(cn)
+                raws.append(rid)
+            it[f] = disp
+            it[f + "Id"] = raws
+
     # 品质归一到「稀世」后去重
     rarity_seen = {}
     for it in items:
